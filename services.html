@@ -1,0 +1,523 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שירותי nlp business practitioner מקצועיים — WILDCLEAR</title>
+  <meta name="description" content="גלה את מגוון שירותי ההכשרה המקצועית שלנו בנדל"ן, NLP, משא ומתן וניהול סכסוכים. התאם אישית את המסלול המושלם עבורך.">
+  <meta name="keywords" content="nlp business practitioner, business negotiation course, negotiation and conflict management course, real estate expertise, הכשרת נדל\" ן"="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+/* Zappy Attribution Header Styles */
+.zappy-header {
+  position: static;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
+  padding: 16px 10px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 21px;
+}
+
+    .zappy-header p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-bottom: 0 !important;
+    }
+
+.zappy-header .zappy-link {
+  font-weight: 700;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.zappy-header .zappy-link:hover {
+  opacity: 0.7;
+}</style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+<!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: '3ca70348-078e-49e8-a817-959bba59687f',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Zappy Attribution Header -->
+<div id="zappy-attribution-header" class="zappy-header" style="display: none;">
+  <p>Happily created by&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
+</div>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <div class="nav-brand">
+        <a href="/" class="logo-link">
+          <img src="assets/wildclear-real-estate-education-and-coaching-logo.webp" alt="WILDCLEAR" class="logo" />
+        </a>
+      </div>
+      
+      <button class="mobile-toggle" id="mobileToggle" aria-label="תפריט">
+        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      
+      <button class="phone-header-btn" aria-label="התקשר אלינו">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/services">שירותים</a></li>
+        <li><a href="/about">אודות</a></li>
+      </ul>
+      
+      <div class="nav-cta-container">
+        <li class="nav-cta-item">
+          <a href="/contact" class="nav-cta-btn">צור קשר</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>שירותי ההכשרה המקצועית שלנו</h1>
+      <h3>מגוון תוכניות מותאמות אישית לפיתוח הקריירה שלך בנדל"ן</h3>
+    </div>
+  </section>
+
+  <section class="services-detailed">
+    <div class="container">
+      <div class="service-detail">
+        <div class="service-detail-content">
+          <h2>קורס משא ומתן עסקי מתקדם</h2>
+          <p>ה-business negotiation course שלנו הוא אחד התוכניות המקיפות ביותר בישראל לפיתוח מיומנויות משא ומתן ברמה מקצועית. בתוכנית זו תלמד את כל הטכניקות והאסטרטגיות הנדרשות כדי להצליח בכל משא ומתן, החל מעסקאות קטנות ועד לעסקאות מיליונים.</p>
+          <p>התוכנית כוללת הכשרה מעמיקה בפסיכולוגיה של משא ומתן, זיהוי סגנונות משא ומתן שונים, בניית אסטרטגיות מנצחות, וטכניקות מתקדמות להתמודדות עם התנגדויות ודחיות. נלמד איך לקרוא את השפה הלא מילולית של הצד השני, איך לזהות את האינטרסים האמיתיים מאחורי העמדות, ואיך להגיע להסכמים שמועילים לכל הצדדים.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> 12 מפגשים של 3 שעות כל אחד</li>
+            <li><i class="fas fa-check"></i> תרגול מעשי וסימולציות אמיתיות</li>
+            <li><i class="fas fa-check"></i> חומרי לימוד דיגיטליים מקיפים</li>
+            <li><i class="fas fa-check"></i> תעודה מוכרת בסיום הקורס</li>
+            <li><i class="fas fa-check"></i> גישה לקהילת בוגרים בלעדית</li>
+          </ul>
+        </div>
+        <div class="service-detail-image">
+          <img data-placeholder="service-4" data-context="Business professionals engaged in negotiation training workshop with instructor demonstrating techniques on whiteboard" src="assets/wildclear-real-estate-education-and-coaching-service-service-4.webp" alt="אימון משא ומתן עסקי מקצועי">
+        </div>
+      </div>
+
+      <div class="service-detail reverse">
+        <div class="service-detail-image">
+          <img data-placeholder="service-5" data-context="NLP practitioner teaching communication patterns and rapport building techniques to real estate professionals" src="assets/wildclear-real-estate-education-and-coaching-service-service-5.webp" alt="הכשרת NLP למקצוענים בנדל\" ן"="">
+        </div>
+        <div class="service-detail-content">
+          <h2>הכשרת nlp business practitioner מוסמכת</h2>
+          <p>תוכנית ההכשרה שלנו ל-nlp business practitioner היא התוכנית המתקדמת ביותר בתחום התקשורת העסקית והשפעה. NLP (Neuro-Linguistic Programming) הוא תחום שמשלב פסיכולוגיה, תקשורת ושפה כדי ליצור שינוי התנהגותי ולשפר את היכולות האישיות והמקצועיות.</p>
+          <p>במהלך ההכשרה תלמד את העקרונות הבסיסיים של NLP, טכניקות תקשורת מתקדמות, בניית rapport מיידי, שפת גוף ותקשורת לא מילולית, דפוסי שפה משפיעים, וטכניקות שכנוע אתיות. התוכנית מותאמת במיוחד לאנשי מקצוע בנדל"ן ומעניקה כלים מעשיים שניתן ליישם מיד בשטח.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> 16 מפגשים מקיפים עם תרגול אינטנסיבי</li>
+            <li><i class="fas fa-check"></i> הסמכה בינלאומית מוכרת</li>
+            <li><i class="fas fa-check"></i> ליווי אישי של מדריך מוסמך</li>
+            <li><i class="fas fa-check"></i> כלים דיגיטליים ומשאבי למידה</li>
+            <li><i class="fas fa-check"></i> מפגשי המשך והעשרה</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-detail">
+        <div class="service-detail-content">
+          <h2>קורס ניהול סכסוכים ומשא ומתן</h2>
+          <p>ה-negotiation and conflict management course שלנו מיועד למי שרוצה להפוך מומחה בפתרון סכסוכים וניהול משא ומתן במצבים מאתגרים. בעולם הנדל"ן, היכולת להתמודד עם סכסוכים בצורה יעילה ומקצועית היא אחת המיומנויות החשובות ביותר להצלחה.</p>
+          <p>התוכנית מלמדת איך לזהות את הסיבות השורשיות לסכסוכים, איך למנוע הסלמה, טכניקות דה-אסקלציה, בניית פתרונות יצירתיים, ושימוש במודלים מוכחים לפתרון סכסוכים. נלמד גם איך לנהל משא ומתן תחת לחץ, איך להתמודד עם רגשות חזקים (שלנו ושל הצד השני), ואיך להגיע להסכמים בר-קיימא גם במצבים הכי מורכבים.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> 10 מפגשים ממוקדים ומעשיים</li>
+            <li><i class="fas fa-check"></i> תרחישים אמיתיים מהשטח</li>
+            <li><i class="fas fa-check"></i> כלים לניהול משא ומתן תחת לחץ</li>
+            <li><i class="fas fa-check"></i> טכניקות מתקדמות לפתרון סכסוכים</li>
+            <li><i class="fas fa-check"></i> תעודת מומחה בניהול סכסוכים</li>
+          </ul>
+        </div>
+        <div class="service-detail-image">
+          <img data-placeholder="service-6" data-context="Conflict management training session with mediator demonstrating resolution techniques to business professionals" src="assets/wildclear-real-estate-education-and-coaching-service-service-6.webp" alt="אימון ניהול סכסוכים מקצועי">
+        </div>
+      </div>
+
+      <div class="service-detail reverse">
+        <div class="service-detail-image">
+          <img data-placeholder="service-7" data-context="Real estate expert coaching individual client in modern office setting with strategy documents" src="assets/wildclear-real-estate-education-and-coaching-service-service-7.webp" alt="אימון אישי למומחי נדל\" ן"="">
+        </div>
+        <div class="service-detail-content">
+          <h2>אימון אישי ל-real estate expertise</h2>
+          <p>תוכנית האימון האישי שלנו מיועדת לאנשי מקצוע בנדל"ן שרוצים להגיע לרמה הבאה. זוהי תוכנית אינטנסיבית ומותאמת אישית שמתמקדת בפיתוח המיומנויות הספציפיות שאתה צריך כדי להצליח.</p>
+          <p>האימון כולל ניתוח מעמיק של הנקודות החזקות והחלשות שלך, בניית תוכנית פעולה אישית, ליווי צמוד בתהליך היישום, ומשוב מתמיד על ההתקדמות. נעבוד יחד על פיתוח real estate expertise שלך, שיפור מיומנויות המכירה, בניית מותג אישי, ופיתוח אסטרטגיות שיווק מנצחות.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> מפגשים אישיים עם מאמן מוסמך</li>
+            <li><i class="fas fa-check"></i> תוכנית מותאמת אישית 100%</li>
+            <li><i class="fas fa-check"></i> ליווי והנחיה לאורך כל התהליך</li>
+            <li><i class="fas fa-check"></i> כלים וטכניקות לשיפור מיידי</li>
+            <li><i class="fas fa-check"></i> תמיכה זמינה בין המפגשים</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-detail">
+        <div class="service-detail-content">
+          <h2>סדנאות קצרות ומעשיות</h2>
+          <p>מלבד התוכניות המקיפות, אנחנו מציעים גם סדנאות קצרות וממוקדות בנושאים ספציפיים. הסדנאות מתאימות למי שרוצה לרענן ידע, ללמוד נושא חדש, או להעמיק בתחום מסוים ללא התחייבות לקורס ארוך.</p>
+          <p>הסדנאות שלנו כוללות: טכניקות סגירת עסקאות, שיווק דיגיטלי לנדל"ן, בניית מותג אישי, ניהול זמן ופרודוקטיביות, תקשורת משפיעה, וכתיבה שיווקית. כל סדנה היא חוויה אינטנסיבית של 4-6 שעות עם תרגול מעשי ותוכן מעשי שניתן ליישם מיד.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> סדנאות של 4-6 שעות</li>
+            <li><i class="fas fa-check"></i> מגוון רחב של נושאים</li>
+            <li><i class="fas fa-check"></i> תרגול מעשי אינטנסיבי</li>
+            <li><i class="fas fa-check"></i> חומרי לימוד דיגיטליים</li>
+            <li><i class="fas fa-check"></i> מחירים אטרקטיביים</li>
+          </ul>
+        </div>
+        <div class="service-detail-image">
+          <img data-placeholder="service-8" data-context="Interactive workshop with real estate professionals learning digital marketing strategies on laptops" src="assets/wildclear-real-estate-education-and-coaching-service-service-8.webp" alt="סדנה אינטראקטיבית לאנשי נדל\" ן"="">
+        </div>
+      </div>
+
+      <div class="service-detail reverse">
+        <div class="service-detail-image">
+          <img data-placeholder="service-9" data-context="Corporate training session with real estate company team learning advanced sales techniques" src="assets/wildclear-real-estate-education-and-coaching-service-service-9.webp" alt="הכשרה ארגונית לחברת נדל\" ן"="">
+        </div>
+        <div class="service-detail-content">
+          <h2>הכשרות ארגוניות</h2>
+          <p>אנחנו מציעים תוכניות הכשרה מותאמות לחברות נדל"ן, משרדי תיווך וארגונים. ההכשרות הארגוניות שלנו מותאמות לצרכים הספציפיים של הארגון ומעניקות כלים מעשיים לשיפור הביצועים של כל הצוות.</p>
+          <p>נבנה יחד תוכנית הכשרה שמתאימה לתרבות הארגונית שלכם, למטרות העסקיות שלכם, ולרמת הידע של הצוות. ההכשרות כוללות שילוב של תיאוריה ותרגול מעשי, ניתן לבצע אותן במשרדים שלכם או במתחם ההכשרה שלנו.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> תוכניות מותאמות לארגון</li>
+            <li><i class="fas fa-check"></i> הכשרה במקום או במתחם שלנו</li>
+            <li><i class="fas fa-check"></i> מדידת תוצאות וחזרות</li>
+            <li><i class="fas fa-check"></i> ליווי ותמיכה לאורך זמן</li>
+            <li><i class="fas fa-check"></i> מחירים מיוחדים לקבוצות</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-detail">
+        <div class="service-detail-content">
+          <h2>ייעוץ אסטרטגי לעסקים</h2>
+          <p>מעבר להכשרות, אנחנו מציעים גם שירותי ייעוץ אסטרטגי לעסקים בתחום הנדל"ן. הייעוץ שלנו מתמקד בפיתוח אסטרטגיות צמיחה, שיפור תהליכי מכירה, בניית מערכות ניהול לקוחות, ופיתוח תוכניות שיווק מנצחות.</p>
+          <p>נעבוד יחד על זיהוי ההזדמנויות העסקיות, ניתוח התחרות, בניית יתרון תחרותי, ופיתוח תוכנית פעולה ברורה ליישום. הייעוץ שלנו מבוסס על real estate expertise עמוק וניסיון מוכח בהובלת עסקים להצלחה.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> ניתוח מעמיק של העסק</li>
+            <li><i class="fas fa-check"></i> פיתוח אסטרטגיות מנצחות</li>
+            <li><i class="fas fa-check"></i> ליווי ביישום התוכנית</li>
+            <li><i class="fas fa-check"></i> מדידה ובקרה שוטפת</li>
+            <li><i class="fas fa-check"></i> תמיכה לאורך כל הדרך</li>
+          </ul>
+        </div>
+        <div class="service-detail-image">
+          <img data-placeholder="service-10" data-context="Business consultant presenting strategic growth plan to real estate company executives in boardroom" src="assets/wildclear-real-estate-education-and-coaching-service-service-10.webp" alt="ייעוץ אסטרטגי לעסקי נדל\" ן"="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>מעוניין להתחיל?</h2>
+      <p>צור קשר עוד היום לייעוץ חינם ונבנה יחד את התוכנית המושלמת עבורך.</p>
+      <a href="/contact" class="btn-cta">קבע פגישת ייעוץ</a>
+    </div>
+  </section>
+
+  <a href="https://wa.me/[whatsapp_handle]" target="_blank" class="whatsapp-float" aria-label="WhatsApp" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  
+    <!-- Legal Footer -->
+    <footer class="legal-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="all-rights-reserved">
+            <p>© 2025 WILDCLEAR. כל הזכויות שמורות.</p>
+          </div>
+          <div class="footer-social"><a href="https://facebook.com/[facebook_handle]" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="https://instagram.com/[instagram_handle]" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/[whatsapp_handle]" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+          <div class="footer-legal">
+            <a href="privacy.html" aria-label="מדיניות פרטיות">
+              מדיניות פרטיות
+            </a>
+            <span class="separator">|</span>
+            <a href="accessibility.html" aria-label="נגישות">
+              נגישות
+            </a>
+            <span class="separator">|</span>
+            <a href="terms.html" aria-label="תנאי שימוש">
+              תנאי שימוש
+            </a>
+          </div>
+        </div>
+        <div class="zappy-attribution">
+          <p>נוצר באמצעות <a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Zappy</a></p>
+        </div>
+      </div>
+    </footer>
+
+
+<!-- Zappy Attribution Header Script -->
+<script>
+(function() {
+  var websiteId = '3ca70348-078e-49e8-a817-959bba59687f';
+  
+  // Don't show header in preview mode
+  var currentUrl = window.location.href;
+  var isPreview = currentUrl.includes('/preview/') || 
+                  currentUrl.includes('/preview-fullscreen/') || 
+                  currentUrl.includes('localhost:5001') ||
+                  currentUrl.includes('localhost:3000');
+  
+  if (isPreview) {
+    return; // Exit early in preview mode
+  }
+  
+  fetch('https://api.zappy5.com/api/website/' + websiteId + '/tier')
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.showAttribution) {
+        var header = document.getElementById('zappy-attribution-header');
+        if (header) {
+          header.style.display = 'block';
+        }
+      }
+    })
+    .catch(function(error) {
+      console.error('Failed to check tier:', error);
+    });
+})();
+</script>
+    <div data-integration="accessibility:toolbar"></div>
+    <script src="script.js"></script>
+</body></html>
