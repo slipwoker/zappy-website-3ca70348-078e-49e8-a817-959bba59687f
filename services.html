@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512x512.png">
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <style>
 /* Zappy Attribution Header Styles */
 .zappy-header {
@@ -262,7 +262,66 @@
 })();
 </script>
 <!-- End Zappy Analytics -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
+
+    <style id="zappy-mobile-submenu-styles">
+      /* Mobile submenu accordion styles */
+      @media (max-width: 768px) {
+        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu {
+          position: static !important;
+          transform: none !important;
+          box-shadow: none !important;
+          background: transparent !important;
+          margin-top: 0 !important;
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          visibility: hidden;
+          transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease, padding 0.3s ease;
+          padding: 0 !important;
+          border-radius: 0 !important;
+        }
+        .sub-menu.mobile-expanded {
+          max-height: 500px !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          padding: 8px 0 8px 16px !important;
+        }
+        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded, html[lang="ar"] .sub-menu.mobile-expanded {
+          padding: 8px 16px 8px 0 !important;
+        }
+        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu {
+          opacity: 0; visibility: hidden; pointer-events: none;
+        }
+        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded {
+          opacity: 1 !important; visibility: visible !important; pointer-events: auto !important;
+        }
+        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) {
+          display: flex !important; flex-wrap: wrap !important; align-items: center !important;
+        }
+        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a {
+          flex: 1 !important;
+        }
+        .mobile-submenu-toggle {
+          display: flex !important; align-items: center !important; justify-content: center !important;
+          width: 44px !important; height: 44px !important; background: transparent !important;
+          border: none !important; cursor: pointer !important; padding: 0 !important; margin: 0 !important;
+          flex-shrink: 0 !important; -webkit-tap-highlight-color: transparent;
+        }
+        .mobile-submenu-toggle::after {
+          content: '' !important; display: block !important; width: 0 !important; height: 0 !important;
+          border-left: 6px solid transparent !important; border-right: 6px solid transparent !important;
+          border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important;
+        }
+        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
+        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu {
+          flex-basis: 100% !important; width: 100% !important;
+        }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; font-size: 14px !important; }
+        .sub-menu a:hover { background-color: transparent !important; }
+      }
+      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+    </style>
 </head>
 <body>
 
@@ -274,7 +333,7 @@
     <div class="container nav-container">
       <div class="nav-brand">
         <a href="/" class="logo-link">
-          <img src="assets/wildclear-real-estate-education-and-coaching-logo.webp?v=1764574453913-n6u3ge" alt="WILDCLEAR" class="logo">
+          <img src="/assets/wildclear-real-estate-education-and-coaching-logo.webp?v=1764574453913-n6u3ge" alt="WILDCLEAR" class="logo">
         </a>
       </div>
       
@@ -323,13 +382,13 @@
           <ul class="service-features"><li data-item-index="0"><i class="fas fa-check"></i>12 מפגשים מפוצצים בתוכן</li><li data-item-index="1"><i class="fas fa-check"></i>תרגול מעשי וסימולציות אמיתיות</li><li data-item-index="2"><i class="fas fa-check" data-icon-type="fontawesome"></i> ספר קורס המכיל את כל הכלים</li><li data-item-index="3"><i class="fas fa-check" data-icon-type="fontawesome"></i> גישה לקהילת הבוגרים</li><li data-item-index="4"><i class="fas fa-check zappy-editable-icon" data-icon-type="fontawesome"></i> תעודת הסמכה בסיום הקורס</li></ul>
         </div>
         <div class="service-detail-image">
-          <img data-placeholder="service-4" data-context="Business professionals engaged in negotiation training workshop with instructor demonstrating techniques on whiteboard" src="assets/wildclear-real-estate-education-and-coaching-service-service-4.webp?v=1764609418088" alt="אימון משא ומתן עסקי מקצועי">
+          <img data-placeholder="service-4" data-context="Business professionals engaged in negotiation training workshop with instructor demonstrating techniques on whiteboard" src="/assets/wildclear-real-estate-education-and-coaching-service-service-4.webp?v=1764609418088" alt="אימון משא ומתן עסקי מקצועי">
         </div>
       </div>
 
       <div class="service-detail reverse">
         <div class="service-detail-image">
-          <img data-placeholder="service-5" data-context="NLP practitioner teaching communication patterns and rapport building techniques to real estate professionals" src="assets/wildclear-real-estate-education-and-coaching-service-service-5.webp?v=1764610016262" alt="הכשרת NLP למקצוענים בנדל\" ן"="">
+          <img data-placeholder="service-5" data-context="NLP practitioner teaching communication patterns and rapport building techniques to real estate professionals" src="/assets/wildclear-real-estate-education-and-coaching-service-service-5.webp?v=1764610016262" alt="הכשרת NLP למקצוענים בנדל\" ן"="">
         </div>
         <div class="service-detail-content">
           <h2>הכשרת מכירות נדל"ן בשילוב NLP</h2>
@@ -353,13 +412,13 @@
           </ul>
         </div>
         <div class="service-detail-image">
-          <img data-placeholder="service-6" data-context="Conflict management training session with mediator demonstrating resolution techniques to business professionals" src="assets/wildclear-real-estate-education-and-coaching-service-service-6.webp?v=1764611925554" alt="אימון ניהול סכסוכים מקצועי">
+          <img data-placeholder="service-6" data-context="Conflict management training session with mediator demonstrating resolution techniques to business professionals" src="/assets/wildclear-real-estate-education-and-coaching-service-service-6.webp?v=1764611925554" alt="אימון ניהול סכסוכים מקצועי">
         </div>
       </div>
 
       <div class="service-detail reverse">
         <div class="service-detail-image">
-          <img data-placeholder="service-7" data-context="Real estate expert coaching individual client in modern office setting with strategy documents" src="assets/wildclear-real-estate-education-and-coaching-service-service-7.webp?v=1764611973441" alt="אימון אישי למומחי נדל\" ן"="">
+          <img data-placeholder="service-7" data-context="Real estate expert coaching individual client in modern office setting with strategy documents" src="/assets/wildclear-real-estate-education-and-coaching-service-service-7.webp?v=1764611973441" alt="אימון אישי למומחי נדל\" ן"="">
         </div>
         <div class="service-detail-content">
           <h2>אימון אישי למתווכי נדל"ן</h2>
@@ -383,13 +442,13 @@
           </ul>
         </div>
         <div class="service-detail-image">
-          <img data-placeholder="service-8" data-context="Interactive workshop with real estate professionals learning digital marketing strategies on laptops" src="assets/wildclear-real-estate-education-and-coaching-service-service-8.webp?v=1764612955050" alt="סדנה אינטראקטיבית לאנשי נדל\" ן"="">
+          <img data-placeholder="service-8" data-context="Interactive workshop with real estate professionals learning digital marketing strategies on laptops" src="/assets/wildclear-real-estate-education-and-coaching-service-service-8.webp?v=1764612955050" alt="סדנה אינטראקטיבית לאנשי נדל\" ן"="">
         </div>
       </div>
 
       <div class="service-detail reverse">
         <div class="service-detail-image">
-          <img data-placeholder="service-9" data-context="Corporate training session with real estate company team learning advanced sales techniques" src="assets/wildclear-real-estate-education-and-coaching-service-service-9.webp?v=1764612988713" alt="הכשרה ארגונית לחברת נדל\" ן"="">
+          <img data-placeholder="service-9" data-context="Corporate training session with real estate company team learning advanced sales techniques" src="/assets/wildclear-real-estate-education-and-coaching-service-service-9.webp?v=1764612988713" alt="הכשרה ארגונית לחברת נדל\" ן"="">
         </div>
         <div class="service-detail-content">
           <h2>הכשרות ארגוניות</h2>
@@ -419,7 +478,7 @@
           </ul>
         </div>
         <div class="service-detail-image">
-          <img data-placeholder="service-10" data-context="Business consultant presenting strategic growth plan to real estate company executives in boardroom" src="assets/wildclear-real-estate-education-and-coaching-service-service-1.webp?v=1764613234674" alt="ייעוץ אסטרטגי לעסקי נדל\" ן"="">
+          <img data-placeholder="service-10" data-context="Business consultant presenting strategic growth plan to real estate company executives in boardroom" src="/assets/wildclear-real-estate-education-and-coaching-service-service-1.webp?v=1764613234674" alt="ייעוץ אסטרטגי לעסקי נדל\" ן"="">
         </div>
       </div>
     </div>
@@ -501,5 +560,40 @@
 })();
 </script>
     <div data-integration="accessibility:toolbar"></div>
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
+
+    <script id="zappy-mobile-submenu-script">
+    (function() {
+      function initMobileSubmenuToggles() {
+        if (window.innerWidth > 768) {
+          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
+          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
+          return;
+        }
+        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
+        items.forEach(function(li) {
+          if (li.querySelector('.mobile-submenu-toggle')) return;
+          var submenu = li.querySelector('.sub-menu');
+          var parentLink = li.querySelector(':scope > a');
+          if (!submenu || !parentLink) return;
+          var toggleBtn = document.createElement('button');
+          toggleBtn.className = 'mobile-submenu-toggle';
+          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+          toggleBtn.setAttribute('type', 'button');
+          parentLink.insertAdjacentElement('afterend', toggleBtn);
+          toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
+            });
+            submenu.classList.toggle('mobile-expanded');
+            toggleBtn.classList.toggle('expanded');
+          });
+        });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
+      else { initMobileSubmenuToggles(); }
+      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
+    })();
+    </script>
 </body></html>
