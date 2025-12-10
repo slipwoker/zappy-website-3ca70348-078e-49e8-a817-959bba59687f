@@ -4,9 +4,9 @@
 /about  /about.html  200
 /services  /services.html  200
 /blog  /blog.html  200
-/blog/negotiation-mastery  /blog-negotiation-mastery.html  200
-/blog/nlp-for-business  /blog-nlp-for-business.html  200
-/blog/conflict-management  /blog-conflict-management.html  200
+/blog/negotiation-mastery  /blog/negotiation-mastery.html  200
+/blog/nlp-for-business  /blog/nlp-for-business.html  200
+/blog/conflict-management  /blog/conflict-management.html  200
 /contact  /contact.html  200
 
 # Legal pages - redirect old .html URLs to friendly URLs
