@@ -263,66 +263,475 @@
 </script>
 <!-- End Zappy Analytics -->
     <link rel="stylesheet" href="/styles.css">
-
-    <style id="zappy-mobile-submenu-styles">
-      /* Mobile submenu accordion styles */
-      @media (max-width: 768px) {
-        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu {
-          position: static !important;
-          transform: none !important;
-          box-shadow: none !important;
-          background: transparent !important;
-          margin-top: 0 !important;
-          max-height: 0;
-          overflow: hidden;
-          opacity: 0;
-          visibility: hidden;
-          transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease, padding 0.3s ease;
-          padding: 0 !important;
-          border-radius: 0 !important;
-        }
-        .sub-menu.mobile-expanded {
-          max-height: 500px !important;
-          opacity: 1 !important;
-          visibility: visible !important;
-          padding: 8px 0 8px 16px !important;
-        }
-        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded, html[lang="ar"] .sub-menu.mobile-expanded {
-          padding: 8px 16px 8px 0 !important;
-        }
-        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu {
-          opacity: 0; visibility: hidden; pointer-events: none;
-        }
-        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded {
-          opacity: 1 !important; visibility: visible !important; pointer-events: auto !important;
-        }
-        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) {
-          display: flex !important; flex-wrap: wrap !important; align-items: center !important;
-        }
-        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a {
-          flex: 1 !important;
-        }
-        .mobile-submenu-toggle {
-          display: flex !important; align-items: center !important; justify-content: center !important;
-          width: 44px !important; height: 44px !important; background: transparent !important;
-          border: none !important; cursor: pointer !important; padding: 0 !important; margin: 0 !important;
-          flex-shrink: 0 !important; -webkit-tap-highlight-color: transparent;
-        }
-        .mobile-submenu-toggle::after {
-          content: '' !important; display: block !important; width: 0 !important; height: 0 !important;
-          border-left: 6px solid transparent !important; border-right: 6px solid transparent !important;
-          border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important;
-        }
-        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
-        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu {
-          flex-basis: 100% !important; width: 100% !important;
-        }
-        .sub-menu a { padding: 10px 0 !important; display: block !important; font-size: 14px !important; }
-        .sub-menu a:hover { background-color: transparent !important; }
+<style>
+      /* Dropdown sub-menu styles (AI-generated page) */
+      .nav-menu li:has(.sub-menu),
+      nav li:has(.sub-menu),
+      .navbar li:has(.sub-menu) {
+        position: relative;
       }
-      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+      .nav-menu .sub-menu,
+      nav .sub-menu,
+      .navbar .sub-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        padding: 8px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        list-style: none;
+        pointer-events: none;
+      }
+      .nav-menu li:hover > .sub-menu,
+      nav li:hover > .sub-menu,
+      .navbar li:hover > .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .sub-menu li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .sub-menu a {
+        display: block;
+        padding: 10px 16px;
+        color: #333;
+        font-weight: 500;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: background-color 0.2s;
+      }
+      .sub-menu a:hover {
+        background-color: #f5f5f5;
+      }
+      /* RTL dropdown positioning */
+      [dir="rtl"] .sub-menu,
+      html[lang="he"] .sub-menu,
+      html[lang="ar"] .sub-menu {
+        left: auto;
+        right: 0;
+      }
     </style>
-</head>
+          <style id="zappy-cta-mobile-style">
+            /* Hide CTA list item on desktop (tablets and up) */
+            @media (min-width: 769px) {
+              .nav-cta-item-mobile {
+                display: none !important;
+              }
+            }
+            /* Show CTA list item on mobile */
+            @media (max-width: 768px) {
+              .nav-cta-item-mobile {
+                display: list-item !important;
+              }
+            }
+          </style>
+        
+          <style id="zappy-nested-menu-style">
+            /* Desktop only: vertically center nav items */
+            @media (min-width: 769px) {
+              .nav-menu,
+              #navMenu {
+                align-items: center !important;
+              }
+            }
+            
+            /* Menu Group styling (non-clickable parent) - TOP LEVEL ONLY with ultra-specific selector */
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
+              display: inline-block !important;
+              padding: 0.5rem 1rem !important;
+              color: var(--nav-color) !important;
+              font-weight: 500 !important;
+              line-height: 1.7 !important;
+              cursor: default !important;
+              user-select: none !important;
+              vertical-align: middle !important;
+              text-decoration: none !important;
+              margin: 0 !important;
+              transition: color 0.3s ease !important;
+            }
+            
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
+              color: var(--nav-hover-color) !important;
+            }
+            
+            /* Desktop: show submenu on Menu Group hover */
+            li:has(.menu-group-title):hover > .sub-menu {
+              opacity: 1 !important;
+              visibility: visible !important;
+              transform: translateY(0) !important;
+              pointer-events: auto !important; /* Enable interaction when hovering */
+            }
+            
+            /* Hide menu items marked as hidden (overrides hover states) */
+            .zappy-hidden-menu-item,
+            li:has(.menu-group-title):hover > .sub-menu .zappy-hidden-menu-item {
+              display: none !important;
+              opacity: 0 !important;
+              visibility: hidden !important;
+              pointer-events: none !important;
+            }
+            
+            /* Keep submenu visible when hovering over the submenu itself */
+            .sub-menu:hover {
+              opacity: 1 !important;
+              visibility: visible !important;
+              pointer-events: auto !important;
+            }
+            
+            /* Nested dropdown menu styles - using more specific selectors */
+            .nav-menu .sub-menu,
+            nav .sub-menu,
+            .navbar .sub-menu {
+              display: block !important; /* Ensure submenu is in the DOM */
+              position: absolute !important;
+              top: 100%;
+              left: 0;
+              right: auto;
+              min-width: 200px;
+              background: white;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+              border-radius: 8px;
+              padding: 8px 0;
+              margin-top: 0px; /* Remove gap to prevent hover loss */
+              opacity: 0 !important;
+              visibility: hidden !important;
+              transform: translateY(-10px);
+              transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+              z-index: 1000;
+              list-style: none;
+              pointer-events: none; /* Prevent interaction when hidden */
+            }
+            
+            /* RTL (Hebrew/Arabic) submenu positioning - align to right instead of left */
+            [dir="rtl"] .nav-menu .sub-menu,
+            [dir="rtl"] nav .sub-menu,
+            [dir="rtl"] .navbar .sub-menu,
+            html[lang="he"] .nav-menu .sub-menu,
+            html[lang="he"] nav .sub-menu,
+            html[lang="he"] .navbar .sub-menu,
+            html[lang="ar"] .nav-menu .sub-menu,
+            html[lang="ar"] nav .sub-menu,
+            html[lang="ar"] .navbar .sub-menu {
+              left: auto;
+              right: 0;
+            }
+            
+            /* Show submenu on parent hover - more specific selectors */
+            .nav-menu li:hover > .sub-menu,
+            nav li:hover > .sub-menu,
+            .navbar li:hover > .sub-menu {
+              opacity: 1 !important;
+              visibility: visible !important;
+              transform: translateY(0) !important;
+              pointer-events: auto !important; /* Enable interaction when visible */
+            }
+            
+            /* Parent item must be relatively positioned */
+            .nav-menu li:has(.sub-menu),
+            nav li:has(.sub-menu),
+            .navbar li:has(.sub-menu) {
+              position: relative;
+            }
+            
+            /* Style for submenu items */
+            .sub-menu li {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+            }
+            
+            .sub-menu a,
+            .sub-menu .menu-group-title {
+              display: block !important;
+              padding: 10px 12px !important;
+              color: #333 !important;
+              font-weight: 600 !important;
+              text-decoration: none;
+              transition: background-color 0.2s;
+              white-space: nowrap;
+              cursor: default;
+            }
+            
+            .sub-menu a:hover {
+              background-color: #f5f5f5;
+            }
+            
+            /* CRITICAL: Override submenu styles for TOP-LEVEL Menu Groups only - must come AFTER submenu styles */
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
+              display: inline-block !important;
+              padding: 0.5rem 1rem !important;
+              color: var(--nav-color) !important;
+              font-weight: 500 !important;
+              line-height: 1.7 !important;
+              cursor: default !important;
+              user-select: none !important;
+              vertical-align: middle !important;
+              text-decoration: none !important;
+              margin: 0 !important;
+              transition: color 0.3s ease !important;
+            }
+            
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
+              color: var(--nav-hover-color) !important;
+              background-color: transparent !important;
+            }
+            
+            /* On mobile, show nested menus as expandable accordion */
+            @media (max-width: 768px) {
+              /* Mobile submenu styling */
+              .nav-menu .sub-menu,
+              nav .sub-menu,
+              .navbar .sub-menu {
+                position: static !important;
+                transform: none !important;
+                box-shadow: none !important;
+                background: transparent !important;
+                margin-top: 0 !important;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                visibility: hidden;
+                transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease, padding 0.3s ease;
+                padding: 0 !important;
+                border-radius: 0 !important;
+              }
+              
+              /* Expanded state */
+              .sub-menu.mobile-expanded {
+                max-height: 500px !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                padding: 8px 0 8px 16px !important;
+              }
+              
+              /* RTL padding adjustment */
+              [dir="rtl"] .sub-menu.mobile-expanded,
+              html[lang="he"] .sub-menu.mobile-expanded,
+              html[lang="ar"] .sub-menu.mobile-expanded {
+                padding: 8px 16px 8px 0 !important;
+              }
+              
+              /* Disable hover behavior on mobile */
+              .nav-menu li:hover > .sub-menu,
+              nav li:hover > .sub-menu,
+              .navbar li:hover > .sub-menu {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+              }
+              
+              /* Enable visibility for expanded submenus */
+              .nav-menu li > .sub-menu.mobile-expanded,
+              nav li > .sub-menu.mobile-expanded,
+              .navbar li > .sub-menu.mobile-expanded {
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+              }
+              
+              .sub-menu a {
+                padding: 10px 0 !important;
+                display: block !important;
+                font-size: 14px !important;
+              }
+              
+              .sub-menu a:hover {
+                background-color: transparent !important;
+              }
+              
+              /* Parent item wrapper - flex layout for link + toggle */
+              .nav-menu li:has(.sub-menu),
+              nav li:has(.sub-menu),
+              .navbar li:has(.sub-menu) {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                align-items: center !important;
+              }
+              
+              /* Parent link - takes most space, allows navigation */
+              .nav-menu li:has(.sub-menu) > a,
+              nav li:has(.sub-menu) > a,
+              .navbar li:has(.sub-menu) > a,
+              .nav-menu > li > .menu-group-title,
+              #navMenu > li > .menu-group-title {
+                flex: 1 !important;
+              }
+              
+              /* Toggle arrow button - separate clickable area */
+              .mobile-submenu-toggle {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 44px !important;
+                height: 44px !important;
+                background: transparent !important;
+                border: none !important;
+                cursor: pointer !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                flex-shrink: 0 !important;
+                -webkit-tap-highlight-color: transparent;
+              }
+              
+              .mobile-submenu-toggle::after {
+                content: '' !important;
+                display: block !important;
+                width: 0 !important;
+                height: 0 !important;
+                border-left: 6px solid transparent !important;
+                border-right: 6px solid transparent !important;
+                border-top: 7px solid currentColor !important;
+                transition: transform 0.3s ease !important;
+              }
+              
+              /* Rotate arrow when expanded */
+              .mobile-submenu-toggle.expanded::after {
+                transform: rotate(180deg) !important;
+              }
+              
+              /* Submenu takes full width below parent */
+              .nav-menu li:has(.sub-menu) > .sub-menu,
+              nav li:has(.sub-menu) > .sub-menu,
+              .navbar li:has(.sub-menu) > .sub-menu {
+                flex-basis: 100% !important;
+                width: 100% !important;
+              }
+            }
+            
+            /* Hide toggle button on desktop */
+            @media (min-width: 769px) {
+              .mobile-submenu-toggle {
+                display: none !important;
+              }
+            }
+          </style>
+          
+          <script id="zappy-mobile-menu-script">
+            // Mobile menu toggle for nested submenus (including Menu Groups)
+            // Uses separate toggle button - link navigates, arrow toggles submenu
+            (function() {
+              function initMobileMenuToggles() {
+                // Only run on mobile
+                if (window.innerWidth > 768) {
+                  // Remove any toggle buttons on desktop
+                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn => btn.remove());
+                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu => {
+                    menu.classList.remove('mobile-expanded');
+                  });
+                  console.log('[MOBILE MENU] Desktop mode - cleanup done');
+                  return;
+                }
+                
+                console.log('[MOBILE MENU] Initializing mobile menu toggles...');
+                
+                // Find all parent menu items (items with .sub-menu)
+                const menuItemsWithSubmenus = document.querySelectorAll(
+                  '.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)'
+                );
+                
+                console.log('[MOBILE MENU] Found', menuItemsWithSubmenus.length, 'items with submenus');
+                
+                menuItemsWithSubmenus.forEach(function(li) {
+                  // Skip if already has toggle button
+                  if (li.querySelector('.mobile-submenu-toggle')) {
+                    return;
+                  }
+                  
+                  const submenu = li.querySelector('.sub-menu');
+                  const parentLink = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
+                  
+                  if (!submenu || !parentLink) return;
+                  
+                  // Create toggle button
+                  const toggleBtn = document.createElement('button');
+                  toggleBtn.className = 'mobile-submenu-toggle';
+                  toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+                  toggleBtn.setAttribute('type', 'button');
+                  
+                  // Insert toggle button after the link
+                  parentLink.insertAdjacentElement('afterend', toggleBtn);
+                  
+                  console.log('[MOBILE MENU] Created toggle button for:', parentLink.textContent?.trim());
+                  
+                  // Handle toggle button click - only toggles submenu
+                  toggleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isExpanded = submenu.classList.contains('mobile-expanded');
+                    
+                    // Close all other submenus first
+                    document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+                      if (menu !== submenu) {
+                        menu.classList.remove('mobile-expanded');
+                        const otherToggle = menu.parentElement.querySelector('.mobile-submenu-toggle');
+                        if (otherToggle) otherToggle.classList.remove('expanded');
+                      }
+                    });
+                    
+                    // Toggle this submenu
+                    submenu.classList.toggle('mobile-expanded');
+                    toggleBtn.classList.toggle('expanded');
+                    
+                    console.log('[MOBILE MENU] Toggled submenu:', !isExpanded ? 'expanded' : 'collapsed');
+                  });
+                  
+                  // Parent link navigates normally - no preventDefault
+                });
+              }
+              
+              // Initialize on DOM load
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMobileMenuToggles);
+              } else {
+                initMobileMenuToggles();
+              }
+              
+              // Re-initialize on window resize (but use debounce to avoid too many calls)
+              let resizeTimer;
+              window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(initMobileMenuToggles, 250);
+              });
+              
+              // Also initialize when mobile menu becomes visible
+              // This handles cases where the mobile menu is hidden initially
+              const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                  if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    const target = mutation.target;
+                    if (target.classList.contains('active') || target.style.display !== 'none') {
+                      console.log('[MOBILE MENU] Mobile menu became visible, re-initializing...');
+                      setTimeout(initMobileMenuToggles, 100);
+                    }
+                  }
+                });
+              });
+              
+              // Observe mobile menu containers
+              const mobileMenus = document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu');
+              mobileMenus.forEach(function(menu) {
+                observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+              });
+            })();
+          </script>
+        </head>
 <body>
 
 <!-- Zappy Attribution Header -->
@@ -333,7 +742,7 @@
     <div class="container nav-container">
       <div class="nav-brand">
         <a href="/" class="logo-link">
-          <img src="/assets/wildclear-real-estate-education-and-coaching-logo.webp?v=1765182707526-5ylpiy" alt="WILDCLEAR" class="logo">
+          <img src="/assets/wildclear-real-estate-education-and-coaching-logo.webp?v=1765284216158-jj2kqh" alt="WILDCLEAR" class="logo">
         </a>
       </div>
       
@@ -352,10 +761,7 @@
         </svg>
       </button>
       
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="/services">שירותים</a></li>
-        <li><a href="/about">אודות</a></li>
-      </ul>
+      <ul class="nav-menu" id="navMenu"><li><a href="/about">אודות</a></li><li><a href="/services">שירותים</a></li><li><a href="/blog" class="nav-link">בלוג ומאמרים</a><ul class="sub-menu"><li><a href="/blog/negotiation-mastery">משא ומתן</a></li><li><a href="/blog/nlp-for-business">NLP עסקי</a></li><li><a href="/blog/conflict-management">ניהול קונפליקטים</a></li></ul></li><li class="nav-cta-item-mobile"><a href="/contact">צור קשר</a></li></ul>
       
       <div class="nav-cta-container">
         <li class="nav-cta-item">
@@ -366,27 +772,33 @@
   </nav>
 
   <section class="page-header">
-    <div class="container">
+    <div class="container"><div class="zappy-inserted-element" style="margin: 20px 0; text-align: center; display: flex; justify-content: center;"><h2 id="element-saved-1765353947612-yi4ora2nm7b" class="text-3xl font-bold text-gray-900 mb-4" style="color: #4a4a4a;" data-element-type="h2">New Headline</h2></div>
       <h1>שירותי ההכשרה המקצועית שלנו</h1>
       <h3>מגוון תוכניות מותאמות אישית לפיתוח הקריירה שלך בנדל"ן</h3>
     </div>
   </section>
 
-  <section class="services-detailed">
-    <div class="container">
-      <div class="service-detail">
+  <section class="section service-section" id="12-הנקודות-להצלחה-תוכנית-הליווי-למתווכים" data-zappy-section="true">
+  <div class="container">
+    <div class="service-detail">
+      
         <div class="service-detail-content">
           <h2>12 הנקודות להצלחה - תוכנית הליווי למתווכים</h2>
           <p>12 הנקודות להצלחה היא אחת מתוכניות המקיפות ביותר בישראל להכשרה ופיתוח מתווכים ברמה האישית והמקצועית. הכשרה זו מיועדת למתווכי נדל"ן עצמאיים, או אלו המעוניינים להפוך לעצמאיים. והיא ממוקדת הצלחה שלב אחר שלב, עם כל הכלים, הטכניקות והאסטרטגיות הנדרשות כדי להצליח כמתווך ולייצר סיסטם אישי ואוטנטי המביא את היכולות החזקות שלך ללקוחות ולשוק.</p>
           <p>התוכנית כוללת הכשרה מעמיקה בהבנת הפסיכולוגיה של הלקוח, ניהול ומעקב אחר לידים, תשאול צרכים מעמיק, גיוס נכסים, שיווק וסטוריטלינג.  ניהול משא ומתן, בניית אסטרטגיות מנצחות, וטכניקות מתקדמות להתמודדות עם התנגדויות ודחיות. נלמד איך לקרוא את שפת הגוף הלא מילולית של הצד הלקוח ואיך לייצר אסטרטגיית מכירה משלב החשיפה הראשון ועד לחתימת החוזה בפועל.</p>
-          <ul class="service-features"><li data-item-index="0"><i class="fas fa-check"></i>12 מפגשים מפוצצים בתוכן</li><li data-item-index="1"><i class="fas fa-check"></i>תרגול מעשי וסימולציות אמיתיות</li><li data-item-index="2"><i class="fas fa-check" data-icon-type="fontawesome"></i> ספר קורס המכיל את כל הכלים</li><li data-item-index="3"><i class="fas fa-check" data-icon-type="fontawesome"></i> גישה לקהילת הבוגרים</li><li data-item-index="4"><i class="fas fa-check zappy-editable-icon" data-icon-type="fontawesome"></i> תעודת הסמכה בסיום הקורס</li></ul>
+          <ul class="service-features"><li data-item-index="0">12 מפגשים מפוצצים בתוכן</li><li data-item-index="1">תרגול מעשי וסימולציות אמיתיות</li><li data-item-index="2"> ספר קורס המכיל את כל הכלים</li><li data-item-index="3"> גישה לקהילת הבוגרים</li><li data-item-index="4"><i class="fas fa-check zappy-editable-icon" data-icon-type="fontawesome"></i> תעודת הסמכה בסיום הקורס</li></ul>
         </div>
         <div class="service-detail-image">
           <img data-placeholder="service-4" data-context="Business professionals engaged in negotiation training workshop with instructor demonstrating techniques on whiteboard" src="/assets/wildclear-real-estate-education-and-coaching-service-service-4.webp?v=1764609418088" alt="אימון משא ומתן עסקי מקצועי">
         </div>
-      </div>
-
-      <div class="service-detail reverse">
+      
+    </div>
+  </div>
+</section>
+<section class="section service-section" id="הכשרת-מכירות-נדלן-בשילוב-nlp" data-zappy-section="true">
+  <div class="container">
+    <div class="service-detail reverse">
+      
         <div class="service-detail-image">
           <img data-placeholder="service-5" data-context="NLP practitioner teaching communication patterns and rapport building techniques to real estate professionals" src="/assets/wildclear-real-estate-education-and-coaching-service-service-5.webp?v=1764610016262" alt="הכשרת NLP למקצוענים בנדל\" ן">
         </div>
@@ -396,9 +808,14 @@
           <p>במהלך ההכשרה תלמד את העקרונות הבסיסיים של NLP, טכניקות תקשורת מתקדמות, בניית rapport מיידי, שפת גוף ותקשורת לא מילולית, דפוסי שפה משפיעים, וטכניקות שכנוע אתיות. התוכנית מותאמת במיוחד לאנשי מקצוע בנדל"ן ומעניקה כלים מעשיים שניתן ליישם מיד בשטח.</p>
           <ul class="service-features"><li data-item-index="0"><i class="fas fa-check"></i> 4 מפגשים (3 שעות למפגש)</li><li data-item-index="1"><i class="fas fa-check zappy-editable-icon" data-icon-type="fontawesome"></i> תרגול מעשי וסימולציות מהשטח</li><li data-item-index="2"><i class="fas fa-check zappy-editable-icon" data-icon-type="fontawesome"></i> מדריך PDF יישומי וממוקד</li></ul>
         </div>
-      </div>
-
-      <div class="service-detail">
+      
+    </div>
+  </div>
+</section>
+<section class="section service-section" id="קורס-ניהול-משא-ומתן-וישוב-סכסוכים" data-zappy-section="true">
+  <div class="container">
+    <div class="service-detail">
+      
         <div class="service-detail-content">
           <h2>קורס ניהול משא ומתן וישוב סכסוכים</h2>
           <p>הקורס שלנו לניהול ומשא ומתן וישוב סכסוכים מיועד לכל מי שמנהל משא ומתן בסביבה נדל"נית. <br> בעולם הנדל"ן, היכולת להתמודד עם סכסוכים בצורה יעילה ומקצועית, לגשר על הפערים ולהבין לעומק את האינטרסים העומדים בין הצדדים היא אחת המיומנויות החשובות ביותר להצלחה.</p>
@@ -414,9 +831,14 @@
         <div class="service-detail-image">
           <img data-placeholder="service-6" data-context="Conflict management training session with mediator demonstrating resolution techniques to business professionals" src="/assets/wildclear-real-estate-education-and-coaching-service-service-6.webp?v=1764611925554" alt="אימון ניהול סכסוכים מקצועי">
         </div>
-      </div>
-
-      <div class="service-detail reverse">
+      
+    </div>
+  </div>
+</section>
+<section class="section service-section" id="אימון-אישי-למתווכי-נדלן" data-zappy-section="true">
+  <div class="container">
+    <div class="service-detail reverse">
+      
         <div class="service-detail-image">
           <img data-placeholder="service-7" data-context="Real estate expert coaching individual client in modern office setting with strategy documents" src="/assets/wildclear-real-estate-education-and-coaching-service-service-7.webp?v=1764611973441" alt="אימון אישי למומחי נדל\" ן">
         </div>
@@ -426,9 +848,14 @@
           <p>האימון כולל ניתוח מעמיק של הנקודות החזקות והחלשות שלך, בניית תוכנית פעולה אישית, ליווי צמוד בתהליך היישום, ומשוב מתמיד על ההתקדמות. נעבוד יחד על חשיפה ופיתוח החוזקות המשמעותיות ביותר שלך, שיפור מיומנויות המכירה, בניית מותג אישי, ופיתוח אסטרטגיות שיווק מנצחות.</p>
           <ul class="service-features"><li data-item-index="0"><i class="fas fa-check"></i> מפגשים אישיים עם מאמן מוסמך</li><li data-item-index="1"><i class="fas fa-check zappy-editable-icon" data-icon-type="fontawesome"></i> תוכנית מותאמת 100% אליך אישית</li><li data-item-index="2"><i class="fas fa-check"></i> ליווי והנחיה לאורך כל התהליך</li><li data-item-index="3"><i class="fas fa-check"></i> כלים וטכניקות לשיפור מיידי</li><li data-item-index="4"><i class="fas fa-check"></i> תמיכה זמינה בין המפגשים</li></ul>
         </div>
-      </div>
-
-      <div class="service-detail">
+      
+    </div>
+  </div>
+</section>
+<section class="section service-section" id="סדנאות-קצרות-ומעשיות" data-zappy-section="true">
+  <div class="container">
+    <div class="service-detail">
+      
         <div class="service-detail-content">
           <h2>סדנאות קצרות ומעשיות</h2>
           <p>מלבד התוכניות המקיפות, אנחנו מציעים גם סדנאות קצרות וממוקדות בנושאים ספציפיים. הסדנאות מתאימות למי שרוצה לרענן ידע, ללמוד נושא חדש, או להעמיק בתחום מסוים ללא התחייבות לקורס ארוך.</p>
@@ -444,9 +871,14 @@
         <div class="service-detail-image">
           <img data-placeholder="service-8" data-context="Interactive workshop with real estate professionals learning digital marketing strategies on laptops" src="/assets/wildclear-real-estate-education-and-coaching-service-service-8.webp?v=1764612955050" alt="סדנה אינטראקטיבית לאנשי נדל\" ן">
         </div>
-      </div>
-
-      <div class="service-detail reverse">
+      
+    </div>
+  </div>
+</section>
+<section class="section service-section" id="הכשרות-ארגוניות" data-zappy-section="true">
+  <div class="container">
+    <div class="service-detail reverse">
+      
         <div class="service-detail-image">
           <img data-placeholder="service-9" data-context="Corporate training session with real estate company team learning advanced sales techniques" src="/assets/wildclear-real-estate-education-and-coaching-service-service-9.webp?v=1764612988713" alt="הכשרה ארגונית לחברת נדל\" ן">
         </div>
@@ -459,30 +891,36 @@
             <li><i class="fas fa-check"></i> הכשרה במקום או במתחם שלנו</li>
             <li><i class="fas fa-check"></i> מדידת תוצאות וחזרות</li>
             <li><i class="fas fa-check"></i> ליווי ותמיכה לאורך זמן</li>
-            <li><i class="fas fa-check"></i> מחירים מיוחדים לקבוצות</li>
+            <li><i class="fas fa-check"></i>  מחירים מיוחדים לקבוצות</li>
           </ul>
         </div>
-      </div>
-
-      <div class="service-detail">
+      
+    </div>
+  </div>
+</section>
+<section class="section service-section" id="ייעוץ-אסטרטגי-לעסקים-בתחום-הנדלן" data-zappy-section="true">
+  <div class="container">
+    <div class="service-detail">
+      
         <div class="service-detail-content">
-          <h2>ייעוץ אסטרטגי לעסקים בתחום הנדל"ן</h2>
-          <p>מעבר להכשרות, אנחנו מציעים גם שירותי ייעוץ אסטרטגי לעסקים בתחום הנדל"ן בתחום הנדל"ן. הייעוץ שלנו מתמקד בפיתוח אסטרטגיות צמיחה, שיפור תהליכי מכירה, בניית מערכות ניהול לקוחות, ופיתוח תוכניות שיווק מנצחות.</p>
-          <p>נעבוד יחד על זיהוי ההזדמנויות העסקיות, ניתוח התחרות, בניית יתרון תחרותי, ופיתוח תוכנית פעולה ברורה ליישום. הייעוץ שלנו מבוסס על ניסיון בשטח, הכשרות מתקדמות,  וניסיון מוכח בהובלת עסקים להצלחה.</p>
+          <h2>אימון אישי ממוקד מטרה וקריירה</h2>
+          <p>מעבר להכשרות, אנחנו מציעים גם שירותי אימון אישי ממוקד מטרה וקריירה בתחום הנדל"ן. הייעוץ שלנו מתמקד בפיתוח אסטרטגיות צמיחה, שיפור תהליכי מכירה, בניית מערכות ניהול לקוחות, ופיתוח תוכניות שיווק מנצחות.</p>
+          <p>&nbsp;<p data-pm-slice="0 0 []">מתחילים בזיהוי חד של המטרה, מפרקים חסמים ודפוסים שמקרקעים אותנו למקום<br><span style="background-color: inherit;">בונים תוכנית פעולה יישומית המתאימה לאדם שתמיד חלמת להיות<br></span><span style="background-color: inherit;">ועובדים ביחד צעד צעד עד שהשינוי מתקיים</span><span style="background-color: inherit;">.</span></p></p>
           <ul class="service-features">
-            <li><i class="fas fa-check"></i> <i class="fas fa-check" data-element-type="icon" data-element-id="icon-1765187384068-88s4oxl4c" data-icon-type="fontawesome" style="pointer-events: auto; cursor: pointer;" contenteditable="false"></i> ניתוח מעמיק של העסק<button class="zappy-item-delete-btn" title="Delete item"><svg width="24" height="24" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;"><circle cx="15" cy="15" r="15" fill="#FF0083"/><g transform="translate(7.5, 6.5)"><path d="M13.4583 2.83332H11.2625C10.9236 1.18545 9.47401 0.002125 7.79165 0H6.37497C4.6926 0.002125 3.24302 1.18545 2.90414 2.83332H0.708322C0.317123 2.83332 0 3.15045 0 3.54164C0 3.93284 0.317123 4.25 0.708322 4.25H1.41664V13.4583C1.419 15.4134 3.00329 16.9977 4.95832 17H9.20832C11.1634 16.9977 12.7476 15.4134 12.75 13.4583V4.25H13.4583C13.8495 4.25 14.1666 3.93288 14.1666 3.54168C14.1666 3.15048 13.8495 2.83332 13.4583 2.83332ZM6.375 12.0417C6.375 12.4329 6.05788 12.75 5.66668 12.75C5.27545 12.75 4.95832 12.4329 4.95832 12.0417V7.79168C4.95832 7.40048 5.27544 7.08336 5.66664 7.08336C6.05784 7.08336 6.37497 7.40048 6.37497 7.79168L6.375 12.0417ZM9.20832 12.0417C9.20832 12.4329 8.8912 12.75 8.5 12.75C8.1088 12.75 7.79168 12.4329 7.79168 12.0417V7.79168C7.79168 7.40048 8.1088 7.08336 8.5 7.08336C8.8912 7.08336 9.20832 7.40048 9.20832 7.79168V12.0417ZM4.37113 2.83332C4.67241 1.98495 5.47473 1.41774 6.375 1.41664H7.79168C8.69195 1.41774 9.49427 1.98495 9.79555 2.83332H4.37113Z" fill="white"/></g></svg></button><div class="zappy-drag-handle" data-no-icon-edit="true" title="Drag to reorder" draggable="false"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" data-no-icon-edit="true" style="cursor: pointer;"><path d="M8.86753 5.93382C8.86753 6.7257 8.22558 7.36765 7.4337 7.36765C6.64182 7.36765 5.99988 6.7257 5.99988 5.93382C5.99988 5.14194 6.64182 4.5 7.4337 4.5C8.22558 4.5 8.86753 5.14194 8.86753 5.93382Z" fill="#FF0083"/><path d="M8.86753 9.375C8.86753 10.1669 8.22558 10.8088 7.4337 10.8088C6.64182 10.8088 5.99988 10.1669 5.99988 9.375C5.99988 8.58312 6.64182 7.94118 7.4337 7.94118C8.22558 7.94118 8.86753 8.58312 8.86753 9.375Z" fill="#FF0083"/><path d="M8.86753 12.8162C8.86753 13.6081 8.22558 14.25 7.4337 14.25C6.64182 14.25 5.99988 13.6081 5.99988 12.8162C5.99988 12.0243 6.64182 11.3824 7.4337 11.3824C8.22558 11.3824 8.86753 12.0243 8.86753 12.8162Z" fill="#FF0083"/><path d="M12.3087 5.93382C12.3087 6.7257 11.6668 7.36765 10.8749 7.36765C10.083 7.36765 9.44105 6.7257 9.44105 5.93382C9.44105 5.14194 10.083 4.5 10.8749 4.5C11.6668 4.5 12.3087 5.14194 12.3087 5.93382Z" fill="#FF0083"/><path d="M12.3087 9.375C12.3087 10.1669 11.6668 10.8088 10.8749 10.8088C10.083 10.8088 9.44105 10.1669 9.44105 9.375C9.44105 8.58312 10.083 7.94118 10.8749 7.94118C11.6668 7.94118 12.3087 8.58312 12.3087 9.375Z" fill="#FF0083"/><path d="M12.3087 12.8162C12.3087 13.6081 11.6668 14.25 10.8749 14.25C10.083 14.25 9.44105 13.6081 9.44105 12.8162C9.44105 12.0243 10.083 11.3824 10.8749 11.3824C11.6668 11.3824 12.3087 12.0243 12.3087 12.8162Z" fill="#FF0083"/></svg></div></li>
-            <li><i class="fas fa-check"></i> פיתוח אסטרטגיות מנצחות</li>
-            <li><i class="fas fa-check"></i> ליווי ביישום התוכנית</li>
-            <li><i class="fas fa-check"></i> מדידה ובקרה שוטפת</li>
-            <li><i class="fas fa-check"></i> תמיכה לאורך כל הדרך</li>
+            <div class="zappy-inserted-element" style="margin: 20px 0; text-align: center; display: flex; justify-content: center;"><div class="zappy-inserted-element" style="margin: 20px 0; text-align: center; display: flex; justify-content: center;"><h2 id="element-saved-1765353765511-row9plx0m0i" class="text-3xl font-bold text-gray-900 mb-4" style="color: #4a4a4a;" data-element-type="h2">New Headline</h2></div><p id="element-saved-1765353740783-oxjknyr4kl" class="text-base text-gray-700 leading-relaxed" style="color: #4a4a4a;" data-element-type="paragraph">מתחילים בזיהוי המטרה,&nbsp; מאתרים ומפרקים חסמים&nbsp;</p></div><li><i class="fas fa-check"></i>  ניתוח מעמיק של העסק<button class="zappy-item-delete-btn" title="Delete item"><svg width="24" height="24" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;"><circle cx="15" cy="15" r="15" fill="#FF0083"/><g transform="translate(7.5, 6.5)"><path d="M13.4583 2.83332H11.2625C10.9236 1.18545 9.47401 0.002125 7.79165 0H6.37497C4.6926 0.002125 3.24302 1.18545 2.90414 2.83332H0.708322C0.317123 2.83332 0 3.15045 0 3.54164C0 3.93284 0.317123 4.25 0.708322 4.25H1.41664V13.4583C1.419 15.4134 3.00329 16.9977 4.95832 17H9.20832C11.1634 16.9977 12.7476 15.4134 12.75 13.4583V4.25H13.4583C13.8495 4.25 14.1666 3.93288 14.1666 3.54168C14.1666 3.15048 13.8495 2.83332 13.4583 2.83332ZM6.375 12.0417C6.375 12.4329 6.05788 12.75 5.66668 12.75C5.27545 12.75 4.95832 12.4329 4.95832 12.0417V7.79168C4.95832 7.40048 5.27544 7.08336 5.66664 7.08336C6.05784 7.08336 6.37497 7.40048 6.37497 7.79168L6.375 12.0417ZM9.20832 12.0417C9.20832 12.4329 8.8912 12.75 8.5 12.75C8.1088 12.75 7.79168 12.4329 7.79168 12.0417V7.79168C7.79168 7.40048 8.1088 7.08336 8.5 7.08336C8.8912 7.08336 9.20832 7.40048 9.20832 7.79168V12.0417ZM4.37113 2.83332C4.67241 1.98495 5.47473 1.41774 6.375 1.41664H7.79168C8.69195 1.41774 9.49427 1.98495 9.79555 2.83332H4.37113Z" fill="white"/></g></svg></button><div class="zappy-drag-handle" data-no-icon-edit="true" title="Drag to reorder" draggable="false"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" data-no-icon-edit="true" style="cursor: pointer;"><path d="M8.86753 5.93382C8.86753 6.7257 8.22558 7.36765 7.4337 7.36765C6.64182 7.36765 5.99988 6.7257 5.99988 5.93382C5.99988 5.14194 6.64182 4.5 7.4337 4.5C8.22558 4.5 8.86753 5.14194 8.86753 5.93382Z" fill="#FF0083"/><path d="M8.86753 9.375C8.86753 10.1669 8.22558 10.8088 7.4337 10.8088C6.64182 10.8088 5.99988 10.1669 5.99988 9.375C5.99988 8.58312 6.64182 7.94118 7.4337 7.94118C8.22558 7.94118 8.86753 8.58312 8.86753 9.375Z" fill="#FF0083"/><path d="M8.86753 12.8162C8.86753 13.6081 8.22558 14.25 7.4337 14.25C6.64182 14.25 5.99988 13.6081 5.99988 12.8162C5.99988 12.0243 6.64182 11.3824 7.4337 11.3824C8.22558 11.3824 8.86753 12.0243 8.86753 12.8162Z" fill="#FF0083"/><path d="M12.3087 5.93382C12.3087 6.7257 11.6668 7.36765 10.8749 7.36765C10.083 7.36765 9.44105 6.7257 9.44105 5.93382C9.44105 5.14194 10.083 4.5 10.8749 4.5C11.6668 4.5 12.3087 5.14194 12.3087 5.93382Z" fill="#FF0083"/><path d="M12.3087 9.375C12.3087 10.1669 11.6668 10.8088 10.8749 10.8088C10.083 10.8088 9.44105 10.1669 9.44105 9.375C9.44105 8.58312 10.083 7.94118 10.8749 7.94118C11.6668 7.94118 12.3087 8.58312 12.3087 9.375Z" fill="#FF0083"/><path d="M12.3087 12.8162C12.3087 13.6081 11.6668 14.25 10.8749 14.25C10.083 14.25 9.44105 13.6081 9.44105 12.8162C9.44105 12.0243 10.083 11.3824 10.8749 11.3824C11.6668 11.3824 12.3087 12.0243 12.3087 12.8162Z" fill="#FF0083"/></svg></div></li>
+            <li><i class="fas fa-check"></i>   <i class="fas fa-check" data-element-type="icon" data-element-id="icon-1765353328452-rlvqqz19c" data-icon-type="fontawesome" contenteditable="false" style="cursor: pointer;"></i>   <i class="fas fa-check" data-element-type="icon" data-element-id="icon-1765353328452-rlvqqz19c" data-icon-type="fontawesome" contenteditable="false" style="cursor: pointer;"></i> <i class="fas fa-check" data-element-type="icon" data-element-id="icon-1765353328452-rlvqqz19c" data-icon-type="fontawesome" contenteditable="false" style="cursor: pointer;"></i> <i class="fas fa-check" data-element-type="icon" data-element-id="icon-1765353328452-rlvqqz19c" data-icon-type="fontawesome" contenteditable="false" style="cursor: pointer;"></i> מסייע בשיפור ביטחון עצמי</li>
+            <li><i class="fas fa-check"></i>  <i class="fas fa-check" data-element-type="icon" data-element-id="icon-1765353328452-03m5h01cn" data-icon-type="fontawesome" contenteditable="false" style="cursor: pointer;"></i>  <i class="fas fa-check" data-element-type="icon" data-element-id="icon-1765353328452-03m5h01cn" data-icon-type="fontawesome" contenteditable="false" style="cursor: pointer;"></i> <i class="fas fa-check" data-element-type="icon" data-element-id="icon-1765353328452-03m5h01cn" data-icon-type="fontawesome" contenteditable="false" style="cursor: pointer;"></i> <i class="fas fa-check" data-element-type="icon" data-element-id="icon-1765353328452-03m5h01cn" data-icon-type="fontawesome" contenteditable="false" style="cursor: pointer;"></i> מייצר סדר שליטה ומיקוד בקריירה&nbsp;</li>
+            <li><i class="fas fa-check"></i>  <i class="fas fa-check" data-element-type="icon" data-element-id="icon-1765353328452-qee0pl42t" data-icon-type="fontawesome" contenteditable="false" style="cursor: pointer;"></i>  <i class="fas fa-check" data-element-type="icon" data-element-id="icon-1765353328452-qee0pl42t" data-icon-type="fontawesome" contenteditable="false" style="cursor: pointer;"></i> יכולת קבלת החלטות טובה יותר</li>
+            <li><i class="fas fa-check"></i>      <i class="fas fa-check" data-element-type="icon" data-element-id="icon-1765353328452-rgmbdyidz" data-icon-type="fontawesome" contenteditable="false" style="cursor: pointer;"></i>      תמנועה מהירה יותר לכיוון העתיד שבחרת לבנות</li>
           </ul>
         </div>
         <div class="service-detail-image">
           <img data-placeholder="service-10" data-context="Business consultant presenting strategic growth plan to real estate company executives in boardroom" src="/assets/wildclear-real-estate-education-and-coaching-service-service-1.webp?v=1764613234674" alt="ייעוץ אסטרטגי לעסקי נדל\" ן">
         </div>
-      </div>
-    <div class="zappy-inserted-element" style="margin: 20px 0; text-align: right; display: flex; justify-content: flex-start;"><h2 id="element-saved-1765182820756-jc2yl3rc9l9" class="text-3xl font-bold text-gray-900 mb-4" style="color: #4a4a4a;" data-element-type="h2">אימון אישי ממוקד קריירה</h2></div><div class="zappy-inserted-element" style="margin: 20px 0; text-align: right; display: flex; justify-content: flex-start;"><p id="element-saved-1765183142097-md6hgy70il" class="text-base text-gray-700 leading-relaxed" style="color: #4a4a4a;" data-element-type="paragraph">תהליך ממוקד שמטרתו יישור קו, בין המצוי לרצוי מבחינה מקצועית<br>מה אני היום, ואיך אני רואה את העתיד מחר<br>התהליך מורכב מזיהוי נקודת המוצא, חוזקות, חסמים ואמונות מגבילות<br>ובניית מפה ברורה הכוללת מטרות מדידות וצעדים פשוטים למימוש<br>ובסופו קיימת בהירות לגבי המסלול הנכון בעבורך, <br>הגדלת הביטחון ביכולת שלך לממש אותו. ותחושת שליטה חדשה <br>בתחום הקריירה</p></div></div>
-  </section>
+      
+    </div>
+  </div>
+</section>
 
   <section class="cta-section">
     <div class="container">
@@ -550,7 +988,34 @@
       if (data.showAttribution) {
         var header = document.getElementById('zappy-attribution-header');
         if (header) {
-          header.style.display = 'block';
+          // Use dynamic announcement content if available
+          if (data.announcement && data.announcement.html) {
+            header.innerHTML = data.announcement.html;
+          }
+          // Apply fixed positioning styles inline (works for existing sites too)
+          header.style.cssText = 'position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99999 !important; display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; box-sizing: border-box !important;';
+          // Fix child elements that might have position: fixed from old CSS
+          var children = header.querySelectorAll('*');
+          for (var i = 0; i < children.length; i++) {
+            children[i].style.position = 'static';
+          }
+          // Get header height
+          var headerHeight = header.offsetHeight;
+          // Find and fix navbar to be fixed as well (prevents gap at top of page)
+          var navSelectors = ['nav', '.navbar', '.nav'];
+          var navbar = null;
+          for (var j = 0; j < navSelectors.length; j++) {
+            navbar = document.querySelector(navSelectors[j]);
+            if (navbar && navbar.id !== 'zappy-attribution-header') break;
+            navbar = null;
+          }
+          if (navbar) {
+            var navbarHeight = navbar.offsetHeight;
+            navbar.style.cssText += '; position: fixed !important; top: ' + headerHeight + 'px !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99998 !important;';
+            document.body.style.paddingTop = (headerHeight + navbarHeight) + 'px';
+          } else {
+            document.body.style.paddingTop = headerHeight + 'px';
+          }
         }
       }
     })
