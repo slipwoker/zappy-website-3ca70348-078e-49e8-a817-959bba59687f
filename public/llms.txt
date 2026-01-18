@@ -1,0 +1,82 @@
+# Business — Generative Engine Optimization Map
+
+---
+
+## Pages
+
+### WILDCLEAR
+https://wildclear.org
+
+### Services
+https://wildclear.org/services
+
+### Page
+https://wildclear.org/menu-group-1766397323197
+
+### השקעות נדל"ן בפלורידה - מדריך למשקיע | WILDCLEAR
+https://wildclear.org/florida-real-estate
+גלו את הפוטנציאל של השקעות נדל"ן בפלורידה. מדריך מקיף למשקיעים המשלב מומחיות בנדל"ן, אסטרטגיות משא ומתן וניתוח שוק מעמיק להצלחה בארה"ב.
+
+### בלוג נדל"ן ועסקים | WILDCLEAR
+https://wildclear.org/blog
+הבלוג המקצועי של WILDCLEAR - מאמרים בנושא מומחיות בנדל"ן, NLP עסקי, וניהול משא ומתן מתקדם למתווכים ויזמים.
+
+### אומנות המשא ומתן בעסקאות נדל"ן | WILDCLEAR
+https://wildclear.org/blog/negotiation-mastery
+מאמר מעמיק על חשיבות קורס משא ומתן עסקי למתווכים, ניהול קונפליקטים וסגירת עסקאות נדל"ן מורכבות.
+
+### למה כל מתווך צריך להיות NLP Business Practitioner | WILDCLEAR
+https://wildclear.org/blog/nlp-for-agents
+גלו כיצד כלי ה-NLP יכולים לשפר את התקשורת שלכם עם לקוחות, לבנות אמון מהיר ולהגדיל את אחוזי הסגירה בנדל"ן.
+
+### בניית מומחיות בנדל"ן: המפתח לבידול בשוק תחרותי | WILDCLEAR
+https://wildclear.org/blog/market-expertise
+איך לבנות אוטוריטה ומיתוג אישי כמתווך נדל"ן מוביל, וכיצד ידע מקצועי מתרגם להכנסות גבוהות יותר.
+
+### מיתוג אישי מנצח | בלוג נדל"ן
+https://wildclear.org/blog/personal-branding
+גלו כיצד לבנות מותג אישי חזק בעולם הנדל"ן. מאמר מעמיק על שילוב מומחיות בנדל"ן עם עקרונות NLP ליצירת בידול והצלחה עסקית.
+
+### About
+https://wildclear.org/about
+
+### סגירת עסקאות
+https://wildclear.org/blog/closing-deals
+למדו את אומנות סגירת העסקאות בנדל"ן. טכניקות מתקדמות, פסיכולוגיה של מכירות וטיפול בהתנגדויות למתווכים המעוניינים לשפר את אחוזי הסגירה שלהם.
+
+### אינטליגנציה רגשית בנדל"ן - המפתח להצלחה | WILDCLEAR
+https://wildclear.org/blog/emotional-intelligence
+גלו כיצד אינטליגנציה רגשית מהווה חלק בלתי נפרד ממומחיות בנדל"ן. למדו כיצד פרקטישינר NLP עסקי משתמש בכישורים רגשיים לסגירת עסקאות ולבניית אמון עם לקוחות.
+
+### שפת גוף במכירות
+https://wildclear.org/blog/body-language
+גלו כיצד שפת גוף משפיעה על סגירת עסקאות נדל"ן. למדו טכניקות NLP ותקשורת לא מילולית שישדרגו את המומחיות שלכם במשא ומתן ומכירות.
+
+### Contact
+https://wildclear.org/contact
+
+## Legal & Policy
+
+### Privacy Policy
+https://wildclear.org/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://wildclear.org/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://wildclear.org/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+# Business Context (for LLM understanding)
+
+## About Business
+---
+
+# Additional Resources
+
+- **Sitemap**: https://wildclear.org/sitemap.xml
+- **Robots.txt**: https://wildclear.org/robots.txt

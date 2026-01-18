@@ -761,11 +761,11 @@
         </svg>
       </button>
       
-      <ul class="nav-menu" id="navMenu"><li><a href="/about">אודות</a></li><li><a href="/services">שירותים</a></li><li class="nav-cta-item-mobile"><a href="/contact">צור קשר</a></li><li><a href="/blog" class="nav-link">בלוג</a><ul class="sub-menu"><li><a href="/blog/negotiation-mastery" class="nav-link">משא ומתן</a></li><li><a href="/blog/nlp-for-agents" class="nav-link">NLP למתווכים</a></li><li><a href="/blog/market-expertise" class="nav-link">מומחיות בנדל"ן</a></li><li><a href="/blog/personal-branding" class="nav-link">מיתוג אישי</a></li></ul></li></ul>
+      <ul class="nav-menu" id="navMenu"><li><a href="/services">שירותים</a></li><li><span class="menu-group-title">השקעות נדל"ן</span><ul class="sub-menu"><li><a href="/florida-real-estate" class="nav-link">נדל"ן בפלורידה</a></li></ul></li><li><a href="/blog" class="nav-link">בלוג</a><ul class="sub-menu"><li><a href="/blog/negotiation-mastery">משא ומתן</a></li><li><a href="/blog/nlp-for-agents">NLP למתווכים</a></li><li><a href="/blog/market-expertise">מומחיות בנדל"ן</a></li><li><a href="/blog/personal-branding">מיתוג אישי</a></li><li><a href="/blog/closing-deals">סגירת עסקאות</a></li><li><a href="/blog/emotional-intelligence">אינטליגנציה רגשית</a></li><li><a href="/blog/body-language">שפת גוף</a></li></ul></li><li><a href="/about">אודות</a></li><li class="nav-cta-item-mobile"><a href="/contact">צרו קשר</a></li></ul>
       
       <div class="nav-cta-container">
         <li class="nav-cta-item">
-          <a href="/contact" class="nav-cta-btn">צור קשר</a>
+          <a href="/contact" class="nav-cta-btn">צרו קשר</a>
         </li>
       </div>
     </div>
@@ -777,13 +777,13 @@
     <div class="container hero-content">
       <h1>ממוכר נכסים למתווך נדל"ן מוביל שוק</h1>
       <h3>פתח את מלוא הפוטנציאל שלך עם הכשרות מקצועיות בתיווך מכירות ומכירות נדל"ן</h3>
-      <a href="/contact" class="btn-cta">התחל את המסע שלך</a>
+      <a href="/contact" class="btn-cta">צרו קשר</a>
     </div>
   </section>
 
   <section class="intro-section">
     <div class="container">
-      <h2>למה WILDCLEAR?</h2>
+      <h2 style="text-align: center">למה WILDCLEAR?</h2>
       <div class="intro-content">
         <p>בעולם הנדל"ן המתפתח והתחרותי של היום, ההבדל בין מוכר רגיל למוביל שוק טמון ביכולת להוביל מכירות נדל"ן, לבנות קשרי לקוחות חזקים ולפתח אסטרטגיות שיווק מנצחות. WILDCLEAR מציעה תוכניות הכשרה ייחודיות המשלבות real estate expertise עם טכניקות NLP מתקדמות, כדי להעניק לך את הכלים להצלחה אמיתית.</p>
         <p>אנחנו מאמינים שכל איש מקצוע בנדל"ן יכול להגיע לרמה הבאה – כל מה שצריך זה את ההדרכה הנכונה, המיומנויות המתאימות והמנטליות המנצחת. התוכניות שלנו מותאמות אישית לצרכים שלך, ומעניקות לך את היתרון התחרותי שתמיד חלמת עליו.</p>
@@ -869,7 +869,7 @@
     <div class="container">
       <h2>מוכן להפוך למוביל שוק?</h2>
       <p>הצטרף לאלפי אנשי מקצוע שכבר שינו את הקריירה שלהם עם WILDCLEAR. התחל את המסע שלך היום!</p>
-      <a href="/contact" class="btn-cta">קבע פגישת ייעוץ חינם</a>
+      <a href="/contact" class="btn-cta">צרו קשר</a>
     </div>
   </section>
 
@@ -1002,6 +1002,22 @@
       if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
       else { initMobileSubmenuToggles(); }
       var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
+      // Re-initialize when mobile menu becomes visible (MutationObserver)
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes') {
+            var target = mutation.target;
+            if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) {
+              setTimeout(initMobileSubmenuToggles, 100);
+            }
+          }
+        });
+      });
+      setTimeout(function() {
+        document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) {
+          observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+        });
+      }, 500);
     })();
     </script>
 </body></html>
