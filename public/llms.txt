@@ -1,6 +1,4 @@
-# WILDCLEAR — Generative Engine Optimization Map
-
-> A real estate education and coaching business.
+# Business — Generative Engine Optimization Map
 
 ---
 
@@ -28,7 +26,7 @@ https://wildclear.org/blog/negotiation-mastery
 מאמר מעמיק על חשיבות קורס משא ומתן עסקי למתווכים, ניהול קונפליקטים וסגירת עסקאות נדל"ן מורכבות.
 
 ### למה כל מתווך צריך להיות NLP Business Practitioner | WILDCLEAR
-https://wildclear.org/blog/nlp-for-agents
+https://wildclear.org/business-energy-management
 גלו כיצד כלי ה-NLP יכולים לשפר את התקשורת שלכם עם לקוחות, לבנות אמון מהיר ולהגדיל את אחוזי הסגירה בנדל"ן.
 
 ### בניית מומחיות בנדל"ן: המפתח לבידול בשוק תחרותי | WILDCLEAR
@@ -75,15 +73,7 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About WILDCLEAR
-WILDCLEAR is a business in the real estate education and coaching industry.
-
-## Target Audience
-real estate professionals, agents, and entrepreneurs
-
-## Industry
-real estate education and coaching
-
+## About Business
 ---
 
 # Additional Resources
