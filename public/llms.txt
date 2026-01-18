@@ -1,6 +1,4 @@
-# WILDCLEAR — Generative Engine Optimization Map
-
-> A real estate education and coaching business.
+# Business — Generative Engine Optimization Map
 
 ---
 
@@ -75,15 +73,7 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About WILDCLEAR
-WILDCLEAR is a business in the real estate education and coaching industry.
-
-## Target Audience
-real estate professionals, agents, and entrepreneurs
-
-## Industry
-real estate education and coaching
-
+## About Business
 ---
 
 # Additional Resources
