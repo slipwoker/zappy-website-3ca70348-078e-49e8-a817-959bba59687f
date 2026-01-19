@@ -1,26 +1,27 @@
 # Clean URL redirects for Render static hosting
+# Generated: 2026-01-19T14:39:40.838Z
 # These rewrite rules show clean URLs to users while serving .html files
 
-/services  /services.html  200
-/menu-group-1766397323197  /menu-group-1766397323197.html  200
-/florida-real-estate  /florida-real-estate.html  200
-/blog  /blog.html  200
-/blog/negotiation-mastery  /blog/negotiation-mastery.html  200
-/business-energy-management  /business-energy-management.html  200
-/blog/market-expertise  /blog/market-expertise.html  200
-/blog/personal-branding  /blog/personal-branding.html  200
-/about  /about.html  200
-/blog/closing-deals  /blog/closing-deals.html  200
-/blog/emotional-intelligence  /blog/emotional-intelligence.html  200
-/blog/body-language  /blog/body-language.html  200
-/contact  /contact.html  200
+/services  /services.html  200!
+/menu-group-1766397323197  /menu-group-1766397323197.html  200!
+/florida-real-estate  /florida-real-estate.html  200!
+/blog  /blog.html  200!
+/blog/negotiation-mastery  /blog/negotiation-mastery.html  200!
+/business-energy-management  /business-energy-management.html  200!
+/blog/market-expertise  /blog/market-expertise.html  200!
+/blog/personal-branding  /blog/personal-branding.html  200!
+/about  /about.html  200!
+/blog/closing-deals  /blog/closing-deals.html  200!
+/blog/emotional-intelligence  /blog/emotional-intelligence.html  200!
+/blog/body-language  /blog/body-language.html  200!
+/contact  /contact.html  200!
 
 # Legal pages - redirect old .html URLs to friendly URLs
 /privacy.html  /privacy  301
 /accessibility.html  /accessibility  301
 /terms.html  /terms  301
 
-/  /index.html  200
+/  /index.html  200!
 
 # 404 fallback
 /*  /index.html  404
