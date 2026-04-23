@@ -1,10 +1,221 @@
-<!DOCTYPE html><html lang="he" dir="rtl"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>השקעות נדל"ן בפלורידה - מדריך למשקיע | WILDCLEAR</title>
-  <meta name="description" content="גלו את הפוטנציאל של השקעות נדל"ן בפלורידה. מדריך מקיף למשקיעים המשלב מומחיות בנדל"ן, אסטרטגיות משא ומתן וניתוח שוק מעמיק להצלחה בארה"ב.">
-  <meta name="keywords" content="real estate expertise, nlp business practitioner, business negotiation course, negotiation and conflict management course">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>השקעות נדל"ן בפלורידה - מדריך למשקיע | WILDCLEAR</title>
+    <meta name="description" content="גלו את הפוטנציאל של השקעות נדל"ן בפלורידה. מדריך מקיף למשקיעים המשלב מומחיות בנדל"ן, אסטרטגיות משא ומתן וניתוח שוק מעמיק להצלחה בארה"ב.">
+    <meta name="keywords" content="">
+    
+    <!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: '3ca70348-078e-49e8-a817-959bba59687f',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <meta property="og:title" content="השקעות נדל"ן בפלורידה - מדריך למשקיע | WILDCLEAR">
+    <meta property="og:description" content="גלו את הפוטנציאל של השקעות נדל"ן בפלורידה. מדריך מקיף למשקיעים המשלב מומחיות בנדל"ן, אסטרטגיות משא ומתן וניתוח שוק מעמיק להצלחה בארה"ב.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="השקעות נדל"ן בפלורידה - מדריך למשקיע | WILDCLEAR">
+    <meta name="twitter:description" content="גלו את הפוטנציאל של השקעות נדל"ן בפלורידה. מדריך מקיף למשקיעים המשלב מומחיות בנדל"ן, אסטרטגיות משא ומתן וניתוח שוק מעמיק להצלחה בארה"ב.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
@@ -262,7 +473,7 @@
 })();
 </script>
 <!-- End Zappy Analytics -->
-    <link rel="stylesheet" href="/styles.css">
+    
 <style>
       /* Dropdown sub-menu styles (AI-generated page) */
       .nav-menu li:has(.sub-menu),
@@ -735,19 +946,19 @@
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:url" content="https://wildclear.org/florida-real-estate">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="השקעות נדל&quot;ן בפלורידה - מדריך למשקיע | WILDCLEAR">
-    <meta property="og:description" content="גלו את הפוטנציאל של השקעות נדל&quot;ן בפלורידה. מדריך מקיף למשקיעים המשלב מומחיות בנדל&quot;ן, אסטרטגיות ניהול אנרגיה בעסק וניתוח שוק מעמיק להצלחה בארה&quot;ב.">
-    <meta property="og:image" content="https://wildclear.org/assets/page-florida-hero-1766397219406-og.jpg">
+    
+    
+    
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:alt" content="השקעות נדל&quot;ן בפלורידה - מדריך למשקיע | WILDCLEAR">
     <meta property="og:locale" content="he_IL">
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="השקעות נדל&quot;ן בפלורידה - מדריך למשקיע | WILDCLEAR">
-    <meta name="twitter:description" content="גלו את הפוטנציאל של השקעות נדל&quot;ן בפלורידה. מדריך מקיף למשקיעים המשלב מומחיות בנדל&quot;ן, אסטרטגיות ניהול אנרגיה בעסק וניתוח שוק מעמיק להצלחה בארה&quot;ב.">
-    <meta name="twitter:image" content="https://wildclear.org/assets/page-florida-hero-1766397219406-og.jpg">
+    
+    
+    
+    
     <meta name="twitter:image:alt" content="השקעות נדל&quot;ן בפלורידה - מדריך למשקיע | WILDCLEAR"><style id="zappy-ai-page-styles">
 
 
@@ -828,8 +1039,20 @@ img[data-no-hero-position] { position: static !important; }
 .ai-generated-page [class*="hero"] p { color: unset !important; }
 /* End Zappy Base Styles */
 
-</style></head>
+</style>
+    <link rel="stylesheet" href="/styles.css">
+
+    <style id="zappy-widget-visibility">
+      #mic-access-tool-general-button, .mic-access-tool-general-button,
+      #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+      ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
+      #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
+        display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+      }
+    </style>
+</head>
 <body>
+
 
 <!-- Zappy Attribution Header -->
 <div id="zappy-attribution-header" class="zappy-header" style="display: none;">
@@ -844,21 +1067,21 @@ img[data-no-hero-position] { position: static !important; }
       </div>
       
       <button class="mobile-toggle" id="mobileToggle" aria-label="תפריט">
-        <svg class="hamburger-icon" width="24" height="24" viewbox="0 0 24 24" fill="none">
+        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
-        <svg class="close-icon" width="24" height="24" viewbox="0 0 24 24" fill="none" style="display: none;">
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
           <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
       </button>
       
       <button class="phone-header-btn" aria-label="התקשר אלינו">
-        <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
       </button>
       
-      <ul class="nav-menu" id="navMenu"><li><a href="/services">שירותים</a></li><li><span class="menu-group-title">השקעות נדל"ן</span><ul class="sub-menu"><li><a href="/florida-real-estate" class="nav-link">נדל"ן בפלורידה</a></li></ul></li><li><a href="/blog" class="nav-link">בלוג</a><ul class="sub-menu"><li><a href="/blog/negotiation-mastery">ניהול אנרגיה בעסק</a></li><li><a href="/business-energy-management">ניהול אנרגיה בעסק</a></li><li><a href="/blog/market-expertise">קריירה וצמיחה</a></li><li><a href="/blog/personal-branding">משא ומתן</a></li><li><a href="/blog/closing-deals">משא ומתן</a></li><li><a href="/blog/emotional-intelligence">אינטליגנציה רגשית</a></li><li><a href="/blog/body-language">שפת גוף</a></li></ul></li><li><a href="/about">אודות</a></li><li class="nav-cta-item-mobile"><a href="/contact">צרו קשר</a></li></ul>
+      <ul class="nav-menu" id="navMenu"><li><a href="/services">שירותים</a></li><li><span class="menu-group-title">השקעות נדל"ן</span><ul class="sub-menu"><li><a href="/florida-real-estate" class="nav-link">נדל"ן בפלורידה</a></li></ul></li><li><a href="/blog" class="nav-link">בלוג</a><ul class="sub-menu"><li><a href="/blog/negotiation-mastery">ניהול אנרגיה בעסק</a></li><li><a href="/business-energy-management">ניהול אנרגיה בעסק</a></li><li><a href="/blog/market-expertise">קריירה וצמיחה</a></li><li><a href="/blog/personal-branding">משא ומתן</a></li><li><a href="/blog/closing-deals">משא ומתן</a></li><li><a href="/blog/emotional-intelligence">אינטליגנציה רגשית</a></li><li><a href="/blog/body-language">שפת גוף</a></li></ul></li><li><a href="/about">אודות</a></li><li class="nav-cta-item-mobile"><a href="/contact">צרו קשר</a></li><li><a href="/video-gallery" class="nav-link">גלריית וידאו</a></li></ul>
       
       <div class="nav-cta-container">
         <li class="nav-cta-item">
@@ -870,7 +1093,7 @@ img[data-no-hero-position] { position: static !important; }
   <!-- Hero Section -->
   <section class="section hero-section" id="florida-hero" style="background-color: #F8F9FA !important; padding: 80px 0; border-bottom: 1px solid #E5E7EB;; position: relative; overflow: hidden;" data-zappy-section="true">
     <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
+      <div class="grid" style="--zappy-grid-cols: repeat(auto-fit, minmax(300px, 1fr)); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;" data-zappy-explicit-columns="true">
         <div style="text-align: right;">
           <h1 style="color: #4a4a4a !important; font-size: 3rem; line-height: 1.2; margin-bottom: 20px; font-weight: 800;">השקעות נדל"ן בפלורידה: השער שלך לחופש כלכלי בארה"ב</h1>
           <p style="color: #4a4a4a !important; font-size: 1.25rem; line-height: 1.6; margin-bottom: 30px;">
@@ -879,7 +1102,7 @@ img[data-no-hero-position] { position: static !important; }
           <a href="/contact" class="btn" style="display: inline-block; background-color: #2563EB; color: #ffffff !important; padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background-color 0.3s ease;">צרו קשר</a>
         </div>
         <div>
-          <img data-placeholder="florida-hero" data-context="Modern luxury waterfront home in Florida with palm trees and blue sky" data-zappy-editable-image="true" src="/assets/page-florida-hero-1766397219406.webp" alt="בית יוקרה בפלורידה" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);" class="generated-image" data-og-image="assets/page-florida-hero-1766397219406-og.jpg">
+          <img data-placeholder="florida-hero" data-context="Modern luxury waterfront home in Florida with palm trees and blue sky" src="/assets/page-florida-hero-1766397219406.webp" alt="בית יוקרה בפלורידה" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);" class="generated-image" data-og-image="assets/page-florida-hero-1766397219406-og.jpg">
         </div>
       </div>
     </div>
@@ -903,16 +1126,16 @@ img[data-no-hero-position] { position: static !important; }
   <!-- Expertise & Psychology Section -->
   <section class="section" id="expertise-nlp" style="background-color: #F8F9FA !important; padding: 80px 0;" data-zappy-section="true">
     <div class="container">
-      <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px;">
+      <div class="grid" style="--zappy-grid-cols: repeat(auto-fit, minmax(300px, 1fr)); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px;" data-zappy-explicit-columns="true">
         <div>
-          <img data-placeholder="negotiation-meeting" data-context="Professional business meeting in a modern office, shaking hands" data-zappy-editable-image="true" src="/assets/page-negotiation-meeting-1766397218898.webp" alt="פגישת עסקים" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; margin-bottom: 20px;" data-no-hero-position="true" class="generated-image">
+          <img data-placeholder="negotiation-meeting" data-context="Professional business meeting in a modern office, shaking hands" src="/assets/page-negotiation-meeting-1766397218898.webp" alt="פגישת עסקים" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; margin-bottom: 20px;" data-no-hero-position="true" class="generated-image">
           <h3 style="color: #4a4a4a !important; font-size: 1.8rem; margin-bottom: 15px;">הפסיכולוגיה שמאחורי העסקה</h3>
           <p style="color: #4a4a4a !important; font-size: 1.1rem; line-height: 1.7;">
             השקעה בנדל"ן היא בסופו של דבר עסק של אנשים. היכולת לקרוא את הצד השני, להבין את המניעים שלו ולייצר תקשורת בונה היא מה שמבדיל בין עסקה טובה לעסקה מצוינת. כאן נכנסת לתמונה ההכשרה שלנו כ-<strong>פרקטישינר NLP עסקי</strong>. שימוש בטכניקות NLP (ניתוב לשוני פיזיולוגי) מאפשר למשקיעים שלנו לזהות דפוסי חשיבה אצל מוכרים, מתווכים וקבלנים, ולרקום עסקאות שבהן כולם מרגישים מנצחים.
           </p>
         </div>
         <div>
-          <img data-placeholder="strategy-planning" data-context="Business strategy planning on whiteboard with charts" data-zappy-editable-image="true" src="/assets/page-strategy-planning-1766397219627.webp" alt="תכנון אסטרטגי" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; margin-bottom: 20px;" data-no-hero-position="true" class="generated-image">
+          <img data-placeholder="strategy-planning" data-context="Business strategy planning on whiteboard with charts" src="/assets/page-strategy-planning-1766397219627.webp" alt="תכנון אסטרטגי" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; margin-bottom: 20px;" data-no-hero-position="true" class="generated-image">
           <h3 style="color: #4a4a4a !important; font-size: 1.8rem; margin-bottom: 15px;">אומנות הניהול אנרגיה בעסק</h3>
           <p style="color: #4a4a4a !important; font-size: 1.1rem; line-height: 1.7;">
             בשוק האמריקאי, הכל פתוח לניהול אנרגיה בעסק. מי שעבר <strong>קורס ניהול אנרגיה בעסק עסקי</strong> יודע שהמחיר הוא רק רכיב אחד במשוואה. תנאי התשלום, מועד הפינוי, התיקונים הנדרשים – כל אלו הם כלים בארגז הכלים של המשקיע. יתרה מכך, ניהול נכסים מרחוק דורש מיומנויות של פתרון משברים. הידע הנרכש במסגרת <strong>קורס ניהול ניהול אנרגיה בעסק וסכסוכים</strong> הוא קריטי כאשר מתמודדים עם דיירים בעייתיים או חברות ניהול, ומבטיח שההשקעה תישאר רווחית ושקטה לאורך זמן.
@@ -926,10 +1149,10 @@ img[data-no-hero-position] { position: static !important; }
   <section class="section" id="property-types" style="background-color: #FFFFFF !important; padding: 80px 0;" data-zappy-section="true">
     <div class="container">
       <h2 style="color: #4a4a4a !important; text-align: center; font-size: 2.5rem; margin-bottom: 50px;">סוגי נכסים להשקעה בפלורידה</h2>
-      <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+      <div class="services-grid" style="--zappy-grid-cols: repeat(auto-fit, minmax(280px, 1fr)); display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;" data-zappy-explicit-columns="true">
         <!-- Card 1 -->
         <article class="card" style="background: #ffffff; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-          <img data-placeholder="single-family" data-context="Suburban single family house in Florida with lawn" data-zappy-editable-image="true" src="/assets/page-single-family-1766397236183.webp" alt="בית פרטי" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;" data-no-hero-position="true" class="generated-image">
+          <img data-placeholder="single-family" data-context="Suburban single family house in Florida with lawn" src="/assets/page-single-family-1766397236183.webp" alt="בית פרטי" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;" data-no-hero-position="true" class="generated-image">
           <div style="padding: 25px;">
             <h3 style="color: #4a4a4a !important; font-size: 1.5rem; margin-bottom: 15px;">בתים פרטיים (Single Family)</h3>
             <p style="color: #8c8c8c !important; line-height: 1.6; margin-bottom: 20px;">
@@ -941,7 +1164,7 @@ img[data-no-hero-position] { position: static !important; }
 
         <!-- Card 2 -->
         <article class="card" style="background: #ffffff; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-          <img data-placeholder="multi-family" data-context="Small apartment complex building exterior" data-zappy-editable-image="true" src="/assets/page-multi-family-1766397267001.webp" alt="מולטי פמילי" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;" data-no-hero-position="true" class="generated-image">
+          <img data-placeholder="multi-family" data-context="Small apartment complex building exterior" src="/assets/page-multi-family-1766397267001.webp" alt="מולטי פמילי" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;" data-no-hero-position="true" class="generated-image">
           <div style="padding: 25px;">
             <h3 style="color: #4a4a4a !important; font-size: 1.5rem; margin-bottom: 15px;">מולטי פמילי (Multi Family)</h3>
             <p style="color: #8c8c8c !important; line-height: 1.6; margin-bottom: 20px;">
@@ -953,7 +1176,7 @@ img[data-no-hero-position] { position: static !important; }
 
         <!-- Card 3 -->
         <article class="card" style="background: #ffffff; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; transition: transform 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-          <img data-placeholder="vacation-rental" data-context="Modern vacation rental interior with pool view" data-zappy-editable-image="true" src="/assets/page-vacation-rental-1766397236887.webp" alt="דירות נופש" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;" data-no-hero-position="true" class="generated-image">
+          <img data-placeholder="vacation-rental" data-context="Modern vacation rental interior with pool view" src="/assets/page-vacation-rental-1766397236887.webp" alt="דירות נופש" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;" data-no-hero-position="true" class="generated-image">
           <div style="padding: 25px;">
             <h3 style="color: #4a4a4a !important; font-size: 1.5rem; margin-bottom: 15px;">דירות נופש (Short Term)</h3>
             <p style="color: #8c8c8c !important; line-height: 1.6; margin-bottom: 20px;">
@@ -1116,6 +1339,7 @@ img[data-no-hero-position] { position: static !important; }
 })();
 </script>
     <div data-integration="accessibility:toolbar"></div>
+    
     <script src="/script.js"></script>
 
     <script id="zappy-mobile-submenu-script">
@@ -1168,4 +1392,5 @@ img[data-no-hero-position] { position: static !important; }
       }, 500);
     })();
     </script>
-</body></html>
+</body>
+</html>
