@@ -1,4 +1,6 @@
-# Business — Generative Engine Optimization Map
+# WILDCLEAR — Generative Engine Optimization Map
+
+> A real estate education and coaching business.
 
 ---
 
@@ -10,12 +12,8 @@ https://wildclear.org
 ### Services
 https://wildclear.org/services
 
-### Page
+### הרצאות וסדנאות
 https://wildclear.org/menu-group-1766397323197
-
-### השקעות נדל"ן בפלורידה - מדריך למשקיע | WILDCLEAR
-https://wildclear.org/florida-real-estate
-גלו את הפוטנציאל של השקעות נדל"ן בפלורידה. מדריך מקיף למשקיעים המשלב מומחיות בנדל"ן, אסטרטגיות משא ומתן וניתוח שוק מעמיק להצלחה בארה"ב.
 
 ### בלוג נדל"ן ועסקים | WILDCLEAR
 https://wildclear.org/blog
@@ -75,12 +73,42 @@ Information about WCAG compliance and accessibility features.
 
 ---
 
-# Business Context (for LLM understanding)
+## How to Contact Us
 
-## About Business
+- Email: assafkakoon@wildclear.org
+- Phone: +972502222494
+- Phone (tel): tel:+972502222494
+- Address: hamaniyot 53, sde nehamia
+
+### Contact form
+- URL: https://wildclear.org/contact
+- Endpoint: https://wildclear.org/api/email/contact-form
+- Method: POST
+- Content-Type: application/json
+- Fields:
+  - `name` (text, required)
+  - `email` (email, required)
+  - `phone` (tel, required)
+  - `message` (textarea)
+  - `terms` (checkbox, required)
+
 ---
 
-# Additional Resources
+# Business Context (for LLM understanding)
 
-- **Sitemap**: https://wildclear.org/sitemap.xml
-- **Robots.txt**: https://wildclear.org/robots.txt
+## About WILDCLEAR
+WILDCLEAR is a business in the real estate education and coaching industry.
+
+## Target Audience
+real estate professionals, agents, and entrepreneurs
+
+## Industry
+real estate education and coaching
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://wildclear.org/sitemap.xml
+- Robots: https://wildclear.org/robots.txt
+- Flattened page text (for LLMs): https://wildclear.org/llms-full.txt
