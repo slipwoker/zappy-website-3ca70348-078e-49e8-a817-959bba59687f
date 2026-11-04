@@ -75,7 +75,7 @@ Information about WCAG compliance and accessibility features.
 - Email: assafkakoon@wildclear.org
 - Phone: +972502222494
 - Phone (tel): tel:+972502222494
-- Address: hamaniyot 53, sde nehamia
+- Address: hamaniyot 53, sde nehamia, 1214500, ישראל
 
 ### Contact form
 - URL: https://wildclear.org/contact
