@@ -2144,6 +2144,45 @@ section.hero .hero-portrait {
   justify-content: center !important;
 }
 
+.partner-logos-section .logos-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 32px 40px !important;
+  justify-items: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.partner-logos-section .logo-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.partner-logos-section .logo-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.partner-logos-section .partner-logo {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 150px !important;
+  max-height: 150px !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 768px) {
+.partner-logos-section .logos-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 24px 20px !important;
+}
+}
+
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
