@@ -802,6 +802,31 @@ section.hero .hero-portrait {
 /* === BUTTON TEXT OVERRIDES END === */
 
 
+.services-preview .btn-secondary {
+  background-color: var(--primary-color, var(--primary, #415E72)) !important;
+  color: var(--surface-color, var(--surface, #FFFFFF)) !important;
+  border-color: var(--primary-color, var(--primary, #415E72)) !important;
+}
+
+.why-choose .feature-icon, .why-choose .feature-item .feature-icon {
+  color: var(--accent-color, var(--accent, #E68368)) !important;
+}
+
+.hero .hero-accent {
+  background-color: var(--accent-color, var(--accent, #E68368)) !important;
+}
+
+.services-preview .service-card h3 {
+  color: var(--text-secondary-color, var(--text-secondary, var(--text-muted, #151515))) !important;
+}
+
+.why-choose h2,
+.services-preview h2,
+.intro-section h2,
+.testimonials h2 {
+  color: var(--text-secondary-color, var(--text-secondary, var(--text-muted, #151515))) !important;
+}
+
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
