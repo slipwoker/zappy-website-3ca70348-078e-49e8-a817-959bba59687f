@@ -2084,6 +2084,66 @@ section.hero .hero-portrait {
   color: var(--accent-color, var(--accent, #E68368)) !important;
 }
 
+.partner-logos-section {
+  background-color: var(--background-color, var(--background, var(--bg-light, #F8F7F4))) !important;
+}
+
+.partner-logos-section .section-title {
+  color: var(--primary-color, var(--primary, #415E72)) !important;
+}
+
+.partner-logos-section .section-subtitle {
+  color: var(--primary-color, var(--primary, #415E72)) !important;
+}
+
+.partner-logos-section .logo-card {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.partner-logos-section .logo-wrapper {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.partner-logos-section .partner-logo {
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  max-width: 180px !important;
+  max-height: 90px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.partner-logos-section .logos-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 32px 48px !important;
+}
+
+.partner-logos-section .partner-logo {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  width: auto !important;
+  height: 80px !important;
+  max-width: 180px !important;
+  max-height: 90px !important;
+  object-fit: contain !important;
+}
+
+.partner-logos-section .logo-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
