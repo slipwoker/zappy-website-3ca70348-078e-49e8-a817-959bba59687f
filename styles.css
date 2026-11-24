@@ -2592,6 +2592,60 @@ section.hero .hero-portrait {
 
 
 
+@media (max-width: 900px) {
+section.hero .hero-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  grid-template-columns: none !important;
+  gap: 32px !important;
+  padding: 48px 24px 64px !important;
+}
+
+section.hero .hero-text {
+  order: 1 !important;
+  width: 100% !important;
+  max-width: 560px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+section.hero .hero-eyebrow {
+  justify-content: center !important;
+}
+
+section.hero .hero-accent {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+section.hero .hero-media {
+  order: 2 !important;
+  width: 100% !important;
+  max-width: 420px !important;
+  margin: 0 auto !important;
+}
+
+section.hero .hero-media [data-zappy-zoom-wrapper] {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 420px !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 auto !important;
+  top: auto !important;
+  left: auto !important;
+}
+
+section.hero .hero-portrait {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  aspect-ratio: 4 / 5 !important;
+  object-fit: cover !important;
+  object-position: 50% 20% !important;
+}
+}
+
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
