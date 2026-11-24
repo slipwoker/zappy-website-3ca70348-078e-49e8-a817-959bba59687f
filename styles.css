@@ -662,7 +662,7 @@ section.hero .hero-cta {
 }
 
 section.hero .hero-cta:hover {
-  background: #345064;
+  background: #34506400 !important;
 }
 
 section.hero .hero-media {
@@ -759,6 +759,35 @@ section.hero .hero-inner { gap: 64px !important; }
 section.hero .hero-text { text-align: right !important; }
 section.hero .hero-accent { margin: 28px 0 !important; }
 
+
+section.hero .hero-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.hero .hero-portrait {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(21, 21, 21, 0.12);
+  display: block;
+  margin: 0 auto;
+}
+
+section.hero .hero-portrait-placeholder,
+section.hero .hero-portrait-hint {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+section.hero .hero-portrait {
+  max-width: 360px;
+}
+}
 
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
