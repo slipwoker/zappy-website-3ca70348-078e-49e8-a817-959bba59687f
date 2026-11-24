@@ -827,6 +827,103 @@ section.hero .hero-portrait {
   color: var(--text-secondary-color, var(--text-secondary, var(--text-muted, #151515))) !important;
 }
 
+.intro-section .growth-header {
+  margin-bottom: 40px;
+}
+
+.intro-section .growth-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary-color, var(--text-secondary, var(--text-muted, #151515)));
+  max-width: 700px;
+  margin: 14px auto 0;
+  line-height: 1.6;
+}
+
+.intro-section .growth-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.intro-section .growth-card {
+  background: var(--surface-color, var(--surface, #FFFFFF));
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+  padding: 32px 26px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-section .growth-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(65, 94, 114, 0.15);
+}
+
+.intro-section .growth-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--background-color, var(--background, var(--bg-light, #F8F7F4)));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.intro-section .growth-icon i {
+  font-size: 26px;
+  color: var(--accent-color, var(--accent, #E68368));
+}
+
+.intro-section .growth-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-secondary-color, var(--text-secondary, var(--text-muted, #151515)));
+  margin: 0 0 12px;
+}
+
+.intro-section .growth-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary-color, var(--text-secondary, var(--text-muted, #151515)));
+  line-height: 1.6;
+  margin: 0 0 22px;
+  flex-grow: 1;
+}
+
+.intro-section .growth-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 50px;
+  background: var(--primary-color, var(--primary, #415E72));
+  color: var(--surface-color, var(--surface, #FFFFFF));
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.intro-section .growth-btn:hover {
+  background: #345064;
+}
+
+@media (max-width: 900px) {
+.intro-section .growth-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (max-width: 600px) {
+.intro-section .growth-grid {
+  grid-template-columns: 1fr;
+}
+}
+/* zappy-self-heal */
+.intro-section .growth-grid { grid-template-columns: repeat(3, 1fr) !important; }
+
+
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
