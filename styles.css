@@ -2843,9 +2843,7 @@ section.hero .hero-portrait {
 .contact-section .contact-form .btn-primary:focus-visible {
   outline: 3px solid rgba(54, 186, 152, 0.6);
   outline-offset: 2px;
-}
-
-/* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
+}/* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
 }
