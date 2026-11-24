@@ -2068,6 +2068,22 @@ section.hero .hero-portrait {
   }
 }
 
+.wk-knowledge-hub .wk-card-title {
+  color: var(--primary-color, var(--primary, #415E72)) !important;
+}
+
+.wk-knowledge-hub .wk-card-icon i {
+  color: var(--primary-color, var(--primary, #415E72)) !important;
+}
+
+.wk-knowledge-hub .wk-card-btn {
+  color: var(--primary-color, var(--primary, #415E72)) !important;
+}
+
+.wk-knowledge-hub .wk-card-btn:hover {
+  color: var(--accent-color, var(--accent, #E68368)) !important;
+}
+
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
