@@ -1641,6 +1641,82 @@ section.hero .hero-portrait {
   }
 }
 
+.testimonials-section .testimonial-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonials-section .testimonial-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.testimonials-section .testimonial-stars {
+  color: #F5B301;
+  font-size: 1.15rem;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+.testimonials-section .testimonial-text {
+  flex: 1;
+}
+
+.testimonials-section .testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.testimonials-section .testimonial-name {
+  font-weight: 700;
+  color: var(--primary-color, var(--primary-color, var(--primary, #415E72)));
+}
+
+.testimonials-section .testimonial-role {
+  color: var(--text-color, var(--text-secondary-color, var(--text-secondary, var(--text-muted, #151515))));
+  opacity: 0.8;
+}
+
+.testimonials-section .testimonial-source {
+  font-size: 0.8rem;
+  color: var(--text-color, var(--text-secondary-color, var(--text-secondary, var(--text-muted, #151515))));
+  opacity: 0.55;
+  margin-top: 10px;
+}
+
+.testimonials-section .testimonials-cta {
+  text-align: center;
+  margin-top: 44px;
+}
+
+.testimonials-section .testimonials-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--primary-color, var(--primary-color, var(--primary, #415E72)));
+  color: var(--surface-color, var(--surface, #FFFFFF));
+  padding: 14px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.testimonials-section .testimonials-cta-btn:hover {
+  background-color: #354d5e;
+  transform: translateY(-2px);
+}
+
+.testimonials-section .testimonials-cta-btn .google-icon {
+  flex-shrink: 0;
+}
+
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
