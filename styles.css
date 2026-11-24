@@ -1955,6 +1955,119 @@ section.hero .hero-portrait {
   }
 }
 
+/* AI-generated section */
+.wc-closing-cta {
+  background: #415E72;
+  padding: 90px 20px;
+  text-align: center;
+  direction: rtl;
+  font-family: system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wc-cta-container {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.wc-cta-heading {
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.wc-cta-paragraph {
+  color: #FFFFFF;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin: 0;
+  max-width: 640px;
+  opacity: 0.92;
+}
+
+.wc-cta-button {
+  display: inline-block;
+  background: #E68368;
+  color: #151515;
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 16px 48px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  border: none;
+  cursor: pointer;
+}
+
+.wc-cta-button:hover {
+  background: #d97458;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+.wc-cta-button:focus-visible {
+  outline: 3px solid #FFFFFF;
+  outline-offset: 3px;
+}
+
+.wc-cta-tags {
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  opacity: 0.65;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+  .wc-closing-cta {
+    padding: 60px 20px;
+  }
+
+  .wc-cta-heading {
+    font-size: 1.9rem;
+  }
+
+  .wc-cta-paragraph {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .wc-cta-button {
+    padding: 14px 36px;
+    font-size: 1.05rem;
+  }
+
+  .wc-cta-container {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wc-cta-heading {
+    font-size: 1.6rem;
+  }
+
+  .wc-closing-cta {
+    padding: 48px 16px;
+  }
+
+  .wc-cta-button {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
