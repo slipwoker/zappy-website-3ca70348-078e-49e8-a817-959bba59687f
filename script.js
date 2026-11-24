@@ -84,6 +84,49 @@ document.addEventListener('DOMContentLoaded', function() {
 } catch (e) {
   if (typeof console !== 'undefined' && console.error) console.error('[Zappy] Added component script failed', e);
 }
+/* ZAPPY_CUSTOM_JS_START:66201c46b50f */
+(function () {
+  function __zappyCustomInit() {
+    try {
+(function () {
+  var grid = document.getElementById('zappy-auto-grid-1768832667701-r1txuc');
+  if (!grid) return;
+  function applyGrid() {
+    var cols = window.innerWidth <= 768 ? 2 : 4;
+    grid.style.display = 'grid';
+    grid.style.gridTemplateColumns = 'repeat(' + cols + ', 1fr)';
+    grid.style.gap = window.innerWidth <= 768 ? '24px 20px' : '32px 40px';
+    grid.style.justifyItems = 'center';
+    grid.style.alignItems = 'center';
+    grid.style.setProperty('--zappy-grid-cols', 'repeat(' + cols + ', 1fr)');
+  }
+  applyGrid();
+  window.addEventListener('resize', applyGrid);
+  // re-apply shortly after load in case the runtime script runs late
+  window.addEventListener('load', function () { setTimeout(applyGrid, 300); });
+  var img = grid.querySelectorAll('.partner-logo');
+  for (var i = 0; i < img.length; i++) {
+    img[i].style.minWidth = '0';
+    img[i].style.minHeight = '0';
+    img[i].style.maxWidth = '150px';
+    img[i].style.maxHeight = '150px';
+    img[i].style.width = 'auto';
+    img[i].style.height = 'auto';
+    img[i].style.objectFit = 'contain';
+    img[i].style.borderRadius = '0';
+  }
+})();
+    } catch (e) {
+      if (typeof console !== 'undefined' && console.warn) { console.warn('[zappy-custom-js]', e); }
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', __zappyCustomInit);
+  } else {
+    __zappyCustomInit();
+  }
+})();
+/* ZAPPY_CUSTOM_JS_END:66201c46b50f */
 
 
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
