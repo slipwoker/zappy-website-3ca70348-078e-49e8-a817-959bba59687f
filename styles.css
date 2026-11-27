@@ -2883,6 +2883,68 @@ section.hero .hero-portrait {
   flex: 0 1 auto;
 }
 
+section.page-header {
+  background-color: var(--background-color, var(--background, var(--bg-light, #F8F7F4))) !important;
+  padding: 96px 0 88px;
+  text-align: center;
+}
+
+section.page-header .container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+section.page-header .page-header-kicker {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--accent-color, var(--accent, #36BA98));
+  margin: 0 0 20px;
+}
+
+section.page-header h1 {
+  color: #151515 !important;
+  font-size: clamp(2.4rem, 5.5vw, 3.9rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 24px;
+}
+
+section.page-header .page-header-divider {
+  width: 64px;
+  height: 4px;
+  background-color: var(--accent-color, var(--accent, #36BA98));
+  border-radius: 2px;
+  margin: 0 auto 28px;
+}
+
+section.page-header h3 {
+  color: var(--primary-color, var(--primary, #415E72)) !important;
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+@media (max-width: 768px) {
+section.page-header {
+  padding: 64px 20px 56px;
+}
+
+section.page-header h1 {
+  font-size: 2.2rem;
+}
+
+section.page-header .page-header-divider {
+  margin-bottom: 22px;
+}
+}
+/* zappy-self-heal */
+section.page-header { padding: 96px 0 88px !important; }
+section.page-header .page-header-divider { margin: 0 auto 28px !important; }
+
+
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
