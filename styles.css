@@ -4386,6 +4386,130 @@ section.approach .approach-heading {
   }
 }
 
+/* AI-generated section */
+.cta-closing {
+  background-color: #415E72;
+  width: 100%;
+  padding: 100px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  direction: rtl;
+  font-family: system-ui, sans-serif;
+  box-sizing: border-box;
+}
+
+.cta-closing__container {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.cta-closing__heading {
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.cta-closing__text {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8;
+  margin: 0;
+  opacity: 0.92;
+  max-width: 620px;
+}
+
+.cta-closing__button {
+  display: inline-block;
+  background-color: #36BA98;
+  color: #1F2937;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 16px 48px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  border: none;
+  line-height: 1.4;
+}
+
+.cta-closing__button:hover {
+  background-color: #2da889;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.24);
+}
+
+.cta-closing__button:focus-visible {
+  outline: 3px solid #FFFFFF;
+  outline-offset: 3px;
+}
+
+.cta-closing__button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .cta-closing {
+    padding: 72px 20px;
+  }
+
+  .cta-closing__container {
+    gap: 22px;
+  }
+
+  .cta-closing__heading {
+    font-size: 1.9rem;
+    line-height: 1.4;
+  }
+
+  .cta-closing__text {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 100%;
+  }
+
+  .cta-closing__button {
+    font-size: 1rem;
+    padding: 14px 40px;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-closing {
+    padding: 56px 16px;
+  }
+
+  .cta-closing__heading {
+    font-size: 1.6rem;
+  }
+
+  .cta-closing__text {
+    font-size: 0.98rem;
+  }
+
+  .cta-closing__button {
+    font-size: 0.95rem;
+    padding: 13px 32px;
+  }
+}
+
 /* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
 :root {
   --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
